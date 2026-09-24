@@ -1,0 +1,55 @@
+import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { AmbientBackground } from './components/AmbientBackground';
+import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { CategorySection } from './components/CategorySection';
+import { ServicesSection } from './components/ServicesSection';
+import { ProductsSection } from './components/ProductsSection';
+import { AboutUs } from './components/AboutUs';
+import { StoreSection } from './components/StoreSection';
+import { Footer } from './components/Footer';
+import { Chatbot } from './components/Chatbot';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import ProductsPage from './pages/ProductsPage';
+
+export default function App() {
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const handleSelectCategory = (catFilter) => {
+    setSelectedCategory(catFilter);
+    const elem = document.getElementById('products');
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const Home = () => (
+    <main>
+      <Hero />
+      <AboutUs />
+      <ServicesSection />
+      <CategorySection onSelectCategory={handleSelectCategory} />
+      <ProductsSection activeCategory={selectedCategory} setActiveCategory={setSelectedCategory} />
+      <StoreSection />
+    </main>
+  );
+
+  return (
+    <div className="app-root">
+      <AmbientBackground />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/products.html" element={<ProductsPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+      <Footer />
+      <Chatbot />
+    </div>
+  );
+}
