@@ -166,9 +166,9 @@ export const ProductsSection = () => {
       </div>
 
       <div className="prod-bottom-action">
-        <button className="btn-primary-cta" style={{ margin: '0 auto' }}>
+        <a href="/products" className="btn-primary-cta" style={{ margin: '0 auto', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
           View All Products <i className="fas fa-arrow-right"></i>
-        </button>
+        </a>
       </div>
 
       <div className="prod-stats-bar">

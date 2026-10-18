@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   const handleCall = (e) => {
     e.preventDefault();
     const phone = "+91" + "9014" + "255803";
     window.location.href = "tel:" + phone;
   };
+
+  const isActive = (path) => location.pathname === path;
+  const isProductsActive = location.pathname.startsWith('/products');
 
   return (
     <header className="navbar">
@@ -18,18 +22,20 @@ export const Navbar = () => {
       </Link>
 
       <nav className={`nav-menu ${mobileOpen ? 'show' : ''}`}>
-        <Link to="/" className="nav-link active" onClick={() => setMobileOpen(false)}>Home</Link>
-        <Link to="/about" className="nav-link" onClick={() => setMobileOpen(false)}>About Us</Link>
-        <Link to="/services" className="nav-link" onClick={() => setMobileOpen(false)}>Services</Link>
+        <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>Home</Link>
+        <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>About Us</Link>
+        <Link to="/services" className={`nav-link ${isActive('/services') ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>Services</Link>
         
         <div className="nav-dropdown">
-           <a href="/products.html" className="nav-link" onClick={() => setMobileOpen(false)}>Products <i className="fas fa-chevron-down nav-chevron"></i></a>
+          <Link to="/products" className={`nav-link ${isProductsActive ? 'active' : ''}`} onClick={() => setMobileOpen(false)}>
+            Products <i className="fas fa-chevron-down nav-chevron"></i>
+          </Link>
           <div className="nav-dropdown-menu">
-            <a href="/insecticides.html">Insecticides</a>
-            <a href="/herbicides.html">Herbicides</a>
-            <a href="/fungicides.html">Fungicides</a>
-            <a href="/nutrients.html">Organic Nutrients</a>
-            <a href="/traps.html">Pest Traps</a>
+            <Link to="/products?category=insecticide" onClick={() => setMobileOpen(false)}>Insecticides</Link>
+            <Link to="/products?category=herbicide" onClick={() => setMobileOpen(false)}>Herbicides</Link>
+            <Link to="/products?category=fungicide" onClick={() => setMobileOpen(false)}>Fungicides</Link>
+            <Link to="/products?category=organic" onClick={() => setMobileOpen(false)}>Organic Nutrients</Link>
+            <Link to="/products?category=trap" onClick={() => setMobileOpen(false)}>Pest Traps</Link>
           </div>
         </div>
       </nav>

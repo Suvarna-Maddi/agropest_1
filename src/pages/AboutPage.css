@@ -254,14 +254,12 @@ p { font-size: 1.1rem; line-height: 1.7; color: #475569; }
 .center-plant img { width: 100%; height: 100%; object-fit: cover; }
 .orbit {
   position: absolute; width: 340px; height: 340px; border: 1px solid rgba(22, 163, 74, 0.15);
-  border-radius: 50%; animation: spin 40s linear infinite;
+  border-radius: 50%;
 }
 .orbit-node {
   position: absolute; width: 50px; height: 50px; background: white; border-radius: 50%;
   display: flex; align-items: center; justify-content: center; color: #16a34a;
   box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid rgba(22,163,74,0.1);
-  /* Counter spin so they stay upright */
-  animation: counter-spin 40s linear infinite;
 }
 .orbit-node span {
   position: absolute; bottom: -35px; font-size: 0.75rem; font-weight: 800; color: #15803d;
@@ -313,10 +311,56 @@ p { font-size: 1.1rem; line-height: 1.7; color: #475569; }
 
 /* --- 8. FOUNDER MESSAGE --- */
 .align-center { align-items: center; }
-.silhouette-wrapper { position: relative; width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
-.silhouette-wrapper img { width: 80%; height: 80%; object-fit: cover; z-index: 2; border-radius: 50%; }
-.s-ring { position: absolute; border-radius: 50%; border: 2px solid rgba(22, 163, 74, 0.3); }
-.r1 { width: 90%; height: 90%; } .r2 { width: 100%; height: 100%; }
+.silhouette-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.silhouette-glow {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+  background: radial-gradient(circle, rgba(34, 197, 94, 0.25) 0%, rgba(34, 197, 94, 0) 70%);
+  filter: blur(40px);
+  z-index: 1;
+}
+.silhouette-wrapper img.founder-portrait {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  object-position: center 15%;
+  z-index: 2;
+  border-radius: 50%;
+  border: 4px solid #ffffff;
+  box-shadow: 0 20px 45px rgba(22, 163, 74, 0.2), 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.silhouette-wrapper:hover img.founder-portrait {
+  transform: scale(1.03);
+  box-shadow: 0 25px 50px rgba(22, 163, 74, 0.28), 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+.s-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(22, 163, 74, 0.35);
+  pointer-events: none;
+}
+.r1 {
+  width: 90%;
+  height: 90%;
+  border-color: rgba(34, 197, 94, 0.4);
+}
+.r2 {
+  width: 100%;
+  height: 100%;
+  border-color: rgba(22, 163, 74, 0.2);
+  border-style: solid;
+}
 .quote-box {
   background: white; padding: 2rem; border-radius: 20px; display: flex; gap: 1.5rem;
   box-shadow: 0 20px 40px rgba(0,0,0,0.05); margin-top: 2rem; border-left: 5px solid #16a34a;

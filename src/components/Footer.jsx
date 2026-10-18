@@ -1,5 +1,4 @@
 import React from 'react';
-import { Chatbot } from './Chatbot';
 
 export const Footer = () => {
   return (
@@ -31,22 +30,22 @@ export const Footer = () => {
             <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links-list">
               <li><a href="/">Home</a></li>
-              <li><a href="/aboutus.html">About Us</a></li>
-              <li><a href="/services.html">Services</a></li>
-              <li><a href="products.html">Products</a></li>
-              <li><a href="#store">Offline Store</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/services">Services</a></li>
+              <li><a href="/products">Products</a></li>
+              <li><a href="/#store">Offline Store</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Services */}
+          {/* Column 3: Services & Categories */}
           <div className="footer-col">
-            <h4 className="footer-col-title">Services</h4>
+            <h4 className="footer-col-title">Product Categories</h4>
             <ul className="footer-links-list">
-              <li><a href="/services.html">Pesticides</a></li>
-              <li><a href="/services.html">Fertilizers</a></li>
-              <li><a href="/services.html">Pest Traps</a></li>
-              <li><a href="/services.html">Drone Services</a></li>
-              <li><a href="/services.html">Organic Nutrients</a></li>
+              <li><a href="/products?category=insecticide">Insecticides</a></li>
+              <li><a href="/products?category=herbicide">Herbicides</a></li>
+              <li><a href="/products?category=fungicide">Fungicides</a></li>
+              <li><a href="/products?category=organic">Organic Nutrients</a></li>
+              <li><a href="/products?category=trap">Pest Traps</a></li>
             </ul>
           </div>
 
@@ -75,7 +74,6 @@ export const Footer = () => {
           <p>&copy; 2026 AgroPest. All rights reserved.</p>
         </div>
       </div>
-      <Chatbot />
     </footer>
   );
 };

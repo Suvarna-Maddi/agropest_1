@@ -4,6 +4,7 @@ import {
   ChevronRight, ChevronLeft, MapPin, Quote, ArrowRight,
   Droplets, Bug, Crosshair, Users, Activity
 } from 'lucide-react';
+import founderImg from '../assets/about_img.png';
 import './AboutPage.css';
 
 const CountUp = ({ end, duration = 2000, suffix = "" }) => {
@@ -130,9 +131,8 @@ const AboutPage = () => {
             <div className="orb-container">
               <div className="orb-glass">
                 <img src="/hero_leaf_precision.png" alt="Smart Plant" className="main-plant" onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" }} />
-                <div className="orb-ring ring-1"></div>
-                <div className="orb-ring ring-2"></div>
-                
+
+
                 {/* Floating Tech Icons */}
                 <div className="tech-icon t-1"><Droplets size={20}/></div>
                 <div className="tech-icon t-2"><Activity size={20}/></div>
@@ -225,7 +225,7 @@ const AboutPage = () => {
 
       {/* --- 5. WHY CHOOSE US --- */}
       <section className="why-choose-ultra">
-        <div className="container split-grid">
+        <div className="container">
           <div className="choose-content reveal">
             <div className="badge-text"><span className="line"></span> WHY CHOOSE US</div>
             <h2>Trusted by Farmers,<br/>Built for a <span className="text-glow">Better Tomorrow</span></h2>
@@ -269,22 +269,7 @@ const AboutPage = () => {
             </div>
           </div>
           
-          <div className="choose-visual reveal delay-1">
-            <div className="orbital-system">
-              <div className="center-plant">
-                <img src="/orbit_center_plant.png" alt="Plant" />
-                <div className="plant-base"></div>
-              </div>
-              
-              <div className="orbit orbit-1">
-                <div className="orbit-node n1"><Leaf size={24}/><span>Healthy Crops</span></div>
-                <div className="orbit-node n2"><ShieldCheck size={24}/><span>Quality Products</span></div>
-                <div className="orbit-node n3"><Activity size={24}/><span>Higher Yield</span></div>
-                <div className="orbit-node n4"><Droplets size={24}/><span>Sustainable Farming</span></div>
-                <div className="orbit-node n5"><Users size={24}/><span>Farmer Support</span></div>
-              </div>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -364,8 +349,7 @@ const AboutPage = () => {
           <div className="founder-visual reveal">
             <div className="silhouette-wrapper">
               <div className="silhouette-glow"></div>
-              {/* Using a generic silhouette or placeholder */}
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Founder" style={{clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)', filter: 'brightness(0.3) sepia(1) hue-rotate(90deg) saturate(3)'}} />
+              <img src={founderImg} alt="AgroPest Founder" className="founder-portrait" />
               <div className="s-ring r1"></div>
               <div className="s-ring r2"></div>
             </div>

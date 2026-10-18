@@ -43,9 +43,16 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/aboutus.html" element={<AboutPage />} />
         <Route path="/services" element={<ServicesPage />} />
-        <Route path="/products.html" element={<ProductsPage />} />
+        <Route path="/services.html" element={<ServicesPage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products.html" element={<ProductsPage />} />
+        <Route path="/insecticides.html" element={<ProductsPage category="insecticide" />} />
+        <Route path="/herbicides.html" element={<ProductsPage category="herbicide" />} />
+        <Route path="/fungicides.html" element={<ProductsPage category="fungicide" />} />
+        <Route path="/nutrients.html" element={<ProductsPage category="organic" />} />
+        <Route path="/traps.html" element={<ProductsPage category="trap" />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
