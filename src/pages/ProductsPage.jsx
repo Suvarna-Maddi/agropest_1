@@ -166,7 +166,9 @@ const ProductsPage = ({ category }) => {
       <div className="chip" data-filter="trap" role="tab">Pest Traps</div>
       {/*<div className="chip" data-filter="drone" role="tab">Drone Service</div>*/}
     </div>
-    <a className="btn secondary" href="#showcase"><i className="fa-solid fa-arrow-down-long"></i> See Products</a>
+    <a className="btn secondary" href="#showcase">
+      <i className="fas fa-arrow-down"></i> See Products
+    </a>
   </div>
 </section>
 

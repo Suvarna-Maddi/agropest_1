@@ -218,16 +218,71 @@
 }
 .chip.active,.chip:hover{background:#0f7a34;color:#fff;border-color:#0f7a34}
 
+/* Buttons & Action Links */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.btn.secondary {
+  background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+  color: #ffffff;
+  border: 1px solid rgba(22, 163, 74, 0.3);
+  box-shadow: 0 4px 14px rgba(21, 128, 61, 0.25);
+}
+
+.btn.secondary:hover {
+  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(21, 128, 61, 0.35);
+}
+
+.btn.secondary i {
+  font-size: 0.85rem;
+  transition: transform 0.2s ease;
+}
+
+.btn.secondary:hover i {
+  transform: translateY(2px);
+}
+
 @media (max-width: 600px){
   .filter-inner {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+    padding: 14px 10px;
   }
 
   .chips {
     justify-content: center;
     width: 100%;
+    gap: 8px;
+  }
+
+  .chip {
+    padding: 7px 14px;
+    font-size: 0.88rem;
+  }
+
+  .btn.secondary {
+    width: auto;
+    min-width: 170px;
+    padding: 10px 24px;
+    font-size: 0.92rem;
+    margin-top: 4px;
   }
 }
 
