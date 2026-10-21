@@ -41,7 +41,7 @@ export const Navbar = () => {
       </nav>
 
       <div className="nav-right-actions">
-        <a href="#contact" onClick={handleCall} className="btn-nav-call">
+        <a href="tel:+919014255803" onClick={handleCall} className="btn-nav-call">
           <i className="fas fa-phone-volume"></i> <span>Contact Us</span>
         </a>
         <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>

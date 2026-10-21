@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const CountUp = ({ end, duration = 2000, suffix = "+" }) => {
   const [count, setCount] = useState(0);
@@ -166,9 +167,9 @@ export const ProductsSection = () => {
       </div>
 
       <div className="prod-bottom-action">
-        <a href="/products" className="btn-primary-cta" style={{ margin: '0 auto', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+        <Link to="/products" className="btn-primary-cta" style={{ margin: '0 auto', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
           View All Products <i className="fas fa-arrow-right"></i>
-        </a>
+        </Link>
       </div>
 
       <div className="prod-stats-bar">

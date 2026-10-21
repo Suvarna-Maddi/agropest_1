@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Footer = () => {
   return (
@@ -29,11 +30,16 @@ export const Footer = () => {
           <div className="footer-col">
             <h4 className="footer-col-title">Quick Links</h4>
             <ul className="footer-links-list">
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/services">Services</a></li>
-              <li><a href="/products">Products</a></li>
-              <li><a href="/#store">Offline Store</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/services">Services</Link></li>
+              <li><Link to="/products">Products</Link></li>
+              <li><Link to="/#store" onClick={() => {
+                if (window.location.pathname === '/') {
+                  const elem = document.getElementById('store');
+                  if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}>Offline Store</Link></li>
             </ul>
           </div>
 
@@ -41,11 +47,11 @@ export const Footer = () => {
           <div className="footer-col">
             <h4 className="footer-col-title">Product Categories</h4>
             <ul className="footer-links-list">
-              <li><a href="/products?category=insecticide">Insecticides</a></li>
-              <li><a href="/products?category=herbicide">Herbicides</a></li>
-              <li><a href="/products?category=fungicide">Fungicides</a></li>
-              <li><a href="/products?category=organic">Organic Nutrients</a></li>
-              <li><a href="/products?category=trap">Pest Traps</a></li>
+              <li><Link to="/products?category=insecticide">Insecticides</Link></li>
+              <li><Link to="/products?category=herbicide">Herbicides</Link></li>
+              <li><Link to="/products?category=fungicide">Fungicides</Link></li>
+              <li><Link to="/products?category=organic">Organic Nutrients</Link></li>
+              <li><Link to="/products?category=trap">Pest Traps</Link></li>
             </ul>
           </div>
 
@@ -63,7 +69,7 @@ export const Footer = () => {
               </li>
               <li>
                 <i className="fas fa-phone"></i>
-                <span><a href="tel:+916302461192" style={{color: 'inherit', textDecoration: 'none'}}>Contact us</a></span>
+                <span><a href="tel:+919014255803" style={{color: 'inherit', textDecoration: 'none'}}>+91 90142 55803</a></span>
               </li>
             </ul>
           </div>

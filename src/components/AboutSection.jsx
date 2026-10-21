@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const AboutSection = () => {
   return (
@@ -103,7 +104,44 @@ export const AboutSection = () => {
             Backed by over 18 years of agricultural expertise
           </p>
 
-
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+            <Link 
+              to="/about" 
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 22px',
+                background: 'linear-gradient(135deg, #16a34a, #15803d)',
+                color: '#fff',
+                borderRadius: '30px',
+                textDecoration: 'none',
+                fontWeight: 700,
+                fontSize: '15px',
+                boxShadow: '0 4px 15px rgba(22, 163, 74, 0.3)'
+              }}
+            >
+              Learn More About Us &rarr;
+            </Link>
+            <Link 
+              to="/services" 
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '10px 22px',
+                background: '#ffffff',
+                color: '#15803d',
+                border: '2px solid #16a34a',
+                borderRadius: '30px',
+                textDecoration: 'none',
+                fontWeight: 700,
+                fontSize: '15px'
+              }}
+            >
+              Our Services
+            </Link>
+          </div>
         </div>
       </div>
     </section>

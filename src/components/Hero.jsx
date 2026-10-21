@@ -1,6 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
+  const scrollToProducts = (e) => {
+    e.preventDefault();
+    const elem = document.getElementById('products');
+    if (elem) {
+      elem.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/products';
+    }
+  };
+
   return (
     <section className="hero-section" id="home">
       {/* Full-width hero.png background image */}
@@ -24,13 +35,13 @@ export const Hero = () => {
           </p>
 
           <div className="hero-caption-buttons">
-            <a href="#products" className="btn-caption-primary">
+            <a href="#products" onClick={scrollToProducts} className="btn-caption-primary">
               Shop Now <i className="fas fa-shopping-bag"></i>
             </a>
             
-            <a href="#products" className="btn-caption-secondary">
+            <Link to="/products" className="btn-caption-secondary">
               View Products
-            </a>
+            </Link>
           </div>
         </div>
       </div>

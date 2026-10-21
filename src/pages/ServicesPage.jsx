@@ -241,7 +241,7 @@ const ServicesPage = () => {
               </div>
             </div>
             
-            <a href="#contact" className="btn-cta-ultra">
+            <a href="tel:+919014255803" className="btn-cta-ultra">
               <span>Talk to an Expert</span>
               <div className="btn-cta-icon"><ArrowRight size={20}/></div>
             </a>

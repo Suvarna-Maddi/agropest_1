@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const ServicesSection = () => {
   const cards = [
@@ -71,14 +72,14 @@ export const ServicesSection = () => {
             </div>
             <h3 className="srv-card-title">{card.title}</h3>
             <p className="srv-card-desc">{card.desc}</p>
-            <button className="srv-card-btn">Learn More &rarr;</button>
+            <Link to="/services" className="srv-card-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Learn More &rarr;</Link>
           </div>
         ))}
       </div>
 
       {/* Explore All Services */}
       <div className="srv-explore-wrapper">
-        <button className="srv-explore-btn">Explore All Services &rarr;</button>
+        <Link to="/services" className="srv-explore-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Explore All Services &rarr;</Link>
         <div className="srv-explore-arrow">
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M90 10 Q 50 20 20 80" stroke="currentColor" strokeWidth="4" strokeLinecap="round" fill="none" />

@@ -284,29 +284,70 @@
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1100px){
-  .hero-inner{grid-template-columns:1fr;gap:28px}
-  .orbit-wrap{order:-1;height:min(320px,50vh)}
+  .grid{grid-template-columns: repeat(3, 1fr); gap: 20px;}
 }
-@media (max-width: 800px){
-  .grid{grid-template-columns: repeat(2,2fr)}
+@media (max-width: 900px){
+  .grid{grid-template-columns: repeat(2, 1fr); gap: 16px;}
+  .modal-card {
+    grid-template-columns: 1fr;
+    max-height: 85vh;
+    overflow-y: auto;
+  }
+  .modal-media {
+    max-height: 240px;
+  }
 }
-@media (max-width: 520px){
-  .grid{grid-template-columns: repeat(2, 1fr);} /* 2 equal columns */
-  .orbit .node{width:92px;height:92px;border-radius:20px}
+@media (max-width: 600px){
+  .grid{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-block: 24px 50px;
+  }
+  .card{
+    border-radius: 16px;
+  }
+  .card-body {
+    padding: 10px 10px 14px;
+  }
+  .card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+  .quick {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  .meta {
+    width: 100%;
+  }
+  .modal-card {
+    width: 95%;
+    border-radius: 16px;
+  }
+  .modal-body h3 {
+    font-size: 1.3rem;
+  }
+  .modal-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .modal-actions .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
 }
 
-@media (max-width: 412px){
-  .grid{grid-template-columns: repeat(2, 1fr);} /* keep 2 columns */
+@media (max-width: 380px){
+  .grid{grid-template-columns: 1fr; gap: 14px;}
+  .quick { width: auto; }
 }
-
-@media (max-width: 400px){
-  .grid{grid-template-columns: repeat(2, 1fr);} /* finally switch to 1 column */
-  .modal-card{grid-template-columns:1fr}
-}
-
 
 /* Motion-reduced accessibility */
 @media (prefers-reduced-motion: reduce){
-  .hero::before, .orbit, .ticker-track{animation:none}
+  .products-ticker-track{animation:none}
 }
 

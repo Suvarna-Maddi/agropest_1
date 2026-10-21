@@ -746,3 +746,73 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+  .hero-exact {
+    min-height: auto;
+  }
+  .hero-exact-content {
+    padding: 2.5rem 1.25rem 2rem;
+  }
+  .hero-title-exact {
+    font-size: clamp(1.8rem, 7.5vw, 2.5rem);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .hero-desc-exact {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+  }
+  .section-desc {
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+  }
+  .cta-text h2 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  .cta-text p {
+    font-size: 0.95rem;
+  }
+  .btn-cta-ultra {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+  .how-steps-modern {
+    gap: 1.5rem;
+  }
+  .timeline-items {
+    height: auto;
+  }
+  .timeline-node {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-exact {
+    font-size: 1.8rem;
+  }
+  .btn-explore {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+  }
+  .node-icon {
+    width: 75px;
+    height: 75px;
+  }
+  .cta-box-premium {
+    padding: 1.75rem 1.25rem;
+  }
+}

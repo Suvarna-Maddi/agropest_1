@@ -418,7 +418,48 @@ p { font-size: 1.1rem; line-height: 1.7; color: #475569; }
   .quote-box { flex-direction: column; text-align: left; }
 }
 @media (max-width: 768px) {
-  .stats-glass-box { grid-template-columns: 1fr; }
-  h1 { font-size: 2.8rem; }
-  h2 { font-size: 2.2rem; }
+  .container { padding: 0 1.25rem; }
+  .about-hero { padding-top: 1rem; }
+  .hero-grid { padding-top: 1rem; gap: 2rem; }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 2rem;
+  }
+  .hero-actions .btn-solid,
+  .hero-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+  }
+  .stats-glass-box { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem 1.25rem; }
+  .stat-col h3 { font-size: 2.3rem; }
+  h1 { font-size: 2.2rem; line-height: 1.2; }
+  h2 { font-size: 1.8rem; line-height: 1.25; }
+  p { font-size: 0.98rem; }
+  .orb-container {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .chart-wrapper {
+    height: 250px;
+    padding: 1rem;
+  }
+  .c-list-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 1.25rem 1rem;
+  }
+  .presence-content .btn-solid {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.55rem; }
+  .badge-text { font-size: 0.7rem; }
 }

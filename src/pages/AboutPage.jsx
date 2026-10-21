@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Leaf, ShieldCheck, TrendingUp, Settings, 
   ChevronRight, ChevronLeft, MapPin, Quote, ArrowRight,
@@ -115,8 +116,8 @@ const AboutPage = () => {
             </p>
             
             <div className="hero-actions">
-              <button className="btn-solid">Explore Our Products <ArrowRight size={18}/></button>
-              <button className="btn-outline">Contact Us</button>
+              <Link to="/products" className="btn-solid" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Explore Our Products <ArrowRight size={18}/></Link>
+              <a href="tel:+919014255803" className="btn-outline" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Contact Us</a>
             </div>
             
             <div className="hero-features">
@@ -153,7 +154,7 @@ const AboutPage = () => {
             <p>
               AgroPest has been a trusted name in agriculture, providing high-quality pesticides, fertilizers, and advanced farming solutions. We are committed to helping farmers improve crop protection, enhance productivity, and adopt modern techniques for a more sustainable and prosperous future.
             </p>
-            <button className="btn-solid mt-4">Our Journey <ArrowRight size={18}/></button>
+            <Link to="/services" className="btn-solid mt-4" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Our Journey <ArrowRight size={18}/></Link>
           </div>
           <div className="story-visual reveal delay-1">
             <ChartAnimation />
@@ -323,7 +324,7 @@ const AboutPage = () => {
             <p className="mt-4">
               Through our store <strong>Bhavani Traders</strong>, we serve farmers directly with trusted agricultural products and expert guidance. Visit us to explore our products and get personalized recommendations for your farming needs.
             </p>
-            <button className="btn-solid mt-6">Visit Our Store <ArrowRight size={18}/></button>
+            <a href="https://maps.app.goo.gl/ac61RZiPrJ2QepAU9" target="_blank" rel="noopener noreferrer" className="btn-solid mt-6" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Visit Our Store <ArrowRight size={18}/></a>
           </div>
           <div className="presence-visual reveal delay-1">
             <div className="map-glow-container" style={{ padding: '10px', background: 'rgba(22, 163, 74, 0.2)' }}>

@@ -2514,12 +2514,19 @@ body::before {
 
 .mobile-toggle {
   display: none;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  color: var(--brand-green-primary);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 1.25rem;
+  color: #ffffff;
   cursor: pointer;
-  padding: 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.mobile-toggle:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
 
 @media (max-width: 992px) {
@@ -2581,72 +2588,230 @@ body::before {
     display: none;
   }
   
-  /* Hero */
+  /* Hero Mobile & Tablet Adaptations */
+  .hero-section {
+    min-height: auto;
+    padding-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-bg-full {
+    min-height: 380px;
+    max-height: 480px;
+    object-position: center;
+    border-radius: 0 0 24px 24px;
+  }
+
   .hero-content-wrapper-left {
     position: relative;
     top: auto;
-    left: 0;
+    left: auto;
     transform: none;
-    margin: 60px auto 40px;
+    margin: 20px auto 30px;
     text-align: center;
     align-items: center;
-    padding: 0 24px;
-    max-width: 100%;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 580px;
   }
   
   .hero-caption-card {
     align-items: center;
     text-align: center;
   }
-  
-  .hero-cta-group {
-    justify-content: center;
-  }
-  
-  /* Sections */
-  .section-container {
-    padding: 60px 20px;
-  }
-  
-  .products-grid, .srv-cards-container {
-    grid-template-columns: 1fr !important;
-  }
-  
-  .minimal-stats-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .prod-main-title {
-    font-size: 2rem;
+
+  .hero-caption-heading {
+    font-size: clamp(1.8rem, 6.5vw, 2.5rem);
+    line-height: 1.2;
     text-align: center;
   }
-  
+
+  .hero-caption-subtext {
+    font-size: clamp(0.92rem, 3.8vw, 1.05rem);
+    text-align: center;
+    margin: 8px 0 16px;
+  }
+
+  .hero-caption-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .btn-caption-primary,
+  .btn-caption-secondary {
+    padding: 10px 20px;
+    font-size: 0.92rem;
+  }
+
+  /* About Banner on Homepage */
+  .about-banner-container {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+  }
+
+  .about-banner-img {
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .about-banner-overlay {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 92%;
+    margin: -40px auto 20px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 24px 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(22, 163, 74, 0.15);
+  }
+
+  .about-banner-overlay h2 {
+    font-size: 1.5rem !important;
+    white-space: normal !important;
+    line-height: 1.25 !important;
+  }
+
+  .about-banner-overlay p {
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Services Section */
+  .srv-section {
+    padding-top: 40px;
+  }
+
+  .srv-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+  }
+
+  .srv-subtitle {
+    font-size: 0.95rem;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+
+  .srv-divider-text {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  .srv-cards-container {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .srv-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    padding: 20px 14px;
+  }
+
+  .srv-card-desc {
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .srv-explore-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Popular Products Carousel & Pedestal */
+  .prod-carousel-section {
+    min-height: auto;
+    padding: 40px 0 60px;
+  }
+
+  .prod-main-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.5rem);
+    text-align: center;
+  }
+
+  .prod-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .prod-carousel-wrapper {
+    height: 420px;
+  }
+
+  .prod-card-auto {
+    width: 230px;
+  }
+
+  .prod-img-wrapper {
+    height: 180px;
+  }
+
   .prod-stats-bar {
     flex-direction: column;
     gap: 20px;
+    padding: 20px 15px;
   }
-  
+
   .prod-stat-divider {
-    width: 100px;
+    width: 80px;
     height: 1px;
   }
-  
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
+
+  /* Store Section */
+  .os-section {
+    padding: 50px 0;
   }
-  
+
+  .os-wrapper {
+    flex-direction: column;
+    gap: 35px;
+    padding: 0 16px;
+  }
+
+  .os-main-title {
+    font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+  }
+
+  .os-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .os-description {
+    font-size: 0.95rem;
+  }
+
+  .os-features-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .os-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .os-btn-primary, .os-btn-secondary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Footer */
+  .footer-modern {
+    padding: 50px 16px 25px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
-  
+
   .footer-bottom-bar {
     flex-direction: column;
     gap: 10px;
@@ -2655,11 +2820,40 @@ body::before {
 }
 
 @media (max-width: 480px) {
-  .hero-main-title {
-    font-size: 2.2rem;
+  .navbar {
+    width: calc(100% - 16px);
+    padding: 0 14px;
+    height: 48px;
+    top: 6px;
   }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+
+  .brand-wrapper img {
+    height: 28px;
+  }
+
+  .btn-nav-call {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .hero-caption-heading {
+    font-size: 1.85rem;
+  }
+
+  .srv-cards-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cat-main-title {
+    font-size: 1.6rem;
+  }
+
   .os-main-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 .nav-dropdown { position: relative; display: flex; align-items: center; }
@@ -2705,4 +2899,34 @@ body::before {
 .nav-dropdown-menu a:hover {
   background: #f0fdf4;
   color: #16a34a;
+}
+
+@media (max-width: 768px) {
+  .nav-dropdown {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .nav-dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    padding: 8px;
+    margin-top: 6px;
+    width: 100%;
+  }
+
+  .nav-dropdown-menu a {
+    text-align: center;
+    padding: 10px;
+    color: #1e293b;
+    font-weight: 600;
+  }
 }

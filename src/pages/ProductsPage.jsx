@@ -44,6 +44,41 @@ const ProductsPage = ({ category }) => {
       });
     });
 
+    // Setup Quick View Modal Handlers
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const mImg = document.getElementById('mImg');
+    const mTitle = document.getElementById('mTitle');
+    const mDesc = document.getElementById('mDesc');
+    const grid = document.getElementById('grid');
+
+    const handleGridClick = (e) => {
+      const btn = e.target.closest('.quick');
+      if (!btn) return;
+      e.stopPropagation(); // prevent card outer onClick navigation
+      const card = btn.closest('.card');
+      if (!card || !modal) return;
+      const img = card.querySelector('img');
+      const title = card.querySelector('h3');
+      const desc = card.querySelector('p');
+      if (mImg && img) mImg.src = img.src;
+      if (mTitle && title) mTitle.textContent = title.textContent;
+      if (mDesc) mDesc.textContent = desc ? desc.textContent : 'High quality agricultural solution by AgroPest for optimal plant protection and higher yields.';
+      modal.classList.add('open');
+    };
+
+    const handleCloseModal = () => {
+      if (modal) modal.classList.remove('open');
+    };
+
+    const handleModalBackdrop = (e) => {
+      if (e.target === modal) modal.classList.remove('open');
+    };
+
+    if (grid) grid.addEventListener('click', handleGridClick);
+    if (closeModal) closeModal.addEventListener('click', handleCloseModal);
+    if (modal) modal.addEventListener('click', handleModalBackdrop);
+
     // Check prop or URL parameters (e.g. ?category=fungicide or ?cat=fungicide)
     const params = new URLSearchParams(location.search);
     const categoryParam = category || params.get('category') || params.get('cat');
@@ -52,6 +87,12 @@ const ProductsPage = ({ category }) => {
     } else {
       applyFilter('all', false);
     }
+
+    return () => {
+      if (grid) grid.removeEventListener('click', handleGridClick);
+      if (closeModal) closeModal.removeEventListener('click', handleCloseModal);
+      if (modal) modal.removeEventListener('click', handleModalBackdrop);
+    };
   }, [category, location.search, location.pathname]);
 
   return (
@@ -3399,8 +3440,8 @@ const ProductsPage = ({ category }) => {
       <h3 id="mTitle">Product</h3>
       <p id="mDesc">Details will appear here. Provide composition, dose, target pests/diseases, and safety notes.</p>
       <div className="modal-actions">
-        <a className="btn" href="#contact"><i className="fa-solid fa-phone"></i> Contact</a>
-        <a className="btn secondary" href="#enquiry"><i className="fa-solid fa-file-signature"></i> Get a Quote</a>
+        <a className="btn" href="tel:+919014255803"><i className="fa-solid fa-phone"></i> Contact</a>
+        <a className="btn secondary" href="https://wa.me/916302461192?text=Hello%2C%20I%20would%20like%20to%20get%20a%20quote%20and%20enquire%20about%20your%20products." target="_blank" rel="noopener noreferrer"><i className="fa-solid fa-file-signature"></i> Get a Quote</a>
       </div>
     </div>
   </div>

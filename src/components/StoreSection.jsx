@@ -56,7 +56,7 @@ export const StoreSection = () => {
             >
               Get Directions
             </a>
-            <a href="tel:+919999999999" className="os-btn-secondary">
+            <a href="tel:+919014255803" className="os-btn-secondary">
               Call Now
             </a>
           </div>
