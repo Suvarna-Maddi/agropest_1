@@ -124,33 +124,65 @@
 
 /* Responsive constraints when the image switches to mobile */
 @media (max-width: 900px) {
-  .hero-exact-bg {
-    /* Ensure the mobile image displays completely without cropping */
-    height: auto;
-    object-fit: contain;
-  }
-  .hero-exact-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 10% 5%;
+  .hero-exact {
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Aligns text to top on mobile image */
+    align-items: center;
+    background: linear-gradient(180deg, #eafbf0 0%, #dcfce7 60%, #bbf7d0 100%);
+    overflow: hidden;
+  }
+  .hero-exact picture {
+    order: 2;
+    width: 100%;
+    margin-top: -2.5rem; /* Seamless blend */
+  }
+  .hero-exact-bg {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    mask-image: linear-gradient(to top, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 85%, transparent 100%);
+  }
+  .hero-exact-content {
+    position: relative; /* Above image on mobile so text never overlaps person */
+    order: 1;
+    width: 100%;
+    height: auto;
+    padding: 3.5rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     text-align: center;
     align-items: center;
     background: transparent;
+    z-index: 5;
+  }
+  .hero-exact-content .sub-heading {
+    justify-content: center;
+  }
+  .hero-exact-content .sub-heading::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background-color: #16a34a;
   }
   .hero-title-exact {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 0.85rem;
+    letter-spacing: -0.5px;
   }
   .hero-desc-exact {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.55;
     margin: 0 auto 1.5rem;
-    max-width: 100%;
+    max-width: 92%;
+    color: #334155;
   }
   .btn-explore {
     align-self: center;
@@ -750,12 +782,6 @@
 @media (max-width: 768px) {
   .container {
     padding: 0 1.25rem;
-  }
-  .hero-exact {
-    min-height: auto;
-  }
-  .hero-exact-content {
-    padding: 2.5rem 1.25rem 2rem;
   }
   .hero-title-exact {
     font-size: clamp(1.8rem, 7.5vw, 2.5rem);
