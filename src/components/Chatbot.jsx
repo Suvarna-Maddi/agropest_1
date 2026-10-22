@@ -21,6 +21,7 @@ export function Chatbot() {
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
+  const inputRef = useRef(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -29,6 +30,10 @@ export function Chatbot() {
   useEffect(() => {
     if (isOpen) {
       scrollToBottom();
+      // Auto focus text input so users can type right away
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
     }
   }, [messages, isOpen, isTyping]);
 
@@ -367,26 +372,32 @@ export function Chatbot() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input Bar */}
-          <div className="chat-input-bar">
+          {/* Input Bar with Form support for mobile & desktop keyboards */}
+          <form 
+            className="chat-input-bar" 
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleSend();
+            }}
+          >
             <input 
+              ref={inputRef}
               type="text" 
-              placeholder="Ask about products, pests, dosage, drone..."
+              placeholder="Type your question here (e.g. rice stem borer, chess, drone)..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={handleKeyDown}
               className="chat-text-input"
-              autoFocus
+              autoComplete="off"
             />
             <button 
-              onClick={() => handleSend()}
+              type="submit"
               className="chat-send-btn"
               disabled={!input.trim()}
               aria-label="Send Message"
             >
               <i className="fas fa-paper-plane"></i>
             </button>
-          </div>
+          </form>
         </div>
       )}
     </>
