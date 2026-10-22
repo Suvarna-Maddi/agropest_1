@@ -80,14 +80,31 @@ const ChartAnimation = () => {
 
 const AboutPage = () => {
   const [activeSlide, setActiveSlide] = useState(2);
+  const trackRef = useRef(null);
+  const itemRefs = useRef([]);
 
-  // Auto-scroll the carousel
+  // Auto-scroll the carousel state
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev < 4 ? prev + 1 : 0));
     }, 3000);
     return () => clearInterval(timer);
   }, []);
+
+  // Smoothly center the active item in track on mobile & desktop
+  useEffect(() => {
+    const activeEl = itemRefs.current[activeSlide];
+    const track = trackRef.current;
+    if (activeEl && track) {
+      const elLeft = activeEl.offsetLeft;
+      const elWidth = activeEl.offsetWidth;
+      const trackWidth = track.offsetWidth;
+      track.scrollTo({
+        left: elLeft - trackWidth / 2 + elWidth / 2,
+        behavior: 'smooth'
+      });
+    }
+  }, [activeSlide]);
 
   // Floating leaves for background animation
   const renderLeaves = () => {
@@ -201,10 +218,11 @@ const AboutPage = () => {
           <h2>Complete Solutions for <span className="text-glow">Modern Farming</span></h2>
           
           <div className="services-carousel mt-12">
-            <div className="carousel-track">
+            <div className="carousel-track" ref={trackRef}>
               {['Pesticides', 'Fertilizers', 'Pest Traps', 'Drone Services', 'Farm Visit'].map((item, index) => (
                 <div 
                   key={index} 
+                  ref={el => (itemRefs.current[index] = el)}
                   className={`carousel-item ${index === activeSlide ? 'active' : ''}`}
                   onClick={() => setActiveSlide(index)}
                   style={{ cursor: 'pointer' }}
@@ -228,7 +246,7 @@ const AboutPage = () => {
       <section className="why-choose-ultra">
         <div className="container">
           <div className="choose-content reveal">
-            <div className="badge-text"><span className="line"></span> WHY CHOOSE US</div>
+            <div className="badge-text center-mobile"><span className="line"></span> WHY CHOOSE US <span className="line"></span></div>
             <h2>Trusted by Farmers,<br/>Built for a <span className="text-glow">Better Tomorrow</span></h2>
             
             <div className="choose-list mt-8">
@@ -319,7 +337,7 @@ const AboutPage = () => {
       <section className="local-presence">
         <div className="container split-grid">
           <div className="presence-content reveal">
-            <div className="badge-text"><span className="line"></span> OUR LOCAL PRESENCE</div>
+            <div className="badge-text center-mobile"><span className="line"></span> OUR LOCAL PRESENCE <span className="line"></span></div>
             <h2>Serving Farmers<br/>Across <span className="text-glow">Telangana</span></h2>
             <p className="mt-4">
               Through our store <strong>Bhavani Traders</strong>, we serve farmers directly with trusted agricultural products and expert guidance. Visit us to explore our products and get personalized recommendations for your farming needs.

@@ -2313,6 +2313,11 @@ body::before {
   flex-direction: column;
 }
 
+.os-pill-badge {
+  align-self: flex-start;
+  margin-bottom: 20px;
+}
+
 .os-main-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
@@ -2745,59 +2750,33 @@ body::before {
   /* Hero Mobile & Tablet Adaptations */
   .hero-section {
     min-height: auto;
-    padding-top: 70px;
+    padding-top: 75px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #ffffff;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero-picture {
+    width: 100%;
+    display: block;
   }
 
   .hero-bg-full {
-    min-height: 380px;
-    max-height: 480px;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: none;
+    object-fit: contain;
     object-position: center;
-    border-radius: 0 0 24px 24px;
+    border-radius: 0;
+    display: block;
   }
 
   .hero-content-wrapper-left {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin: 14px auto 6px;
-    text-align: center;
-    align-items: center;
-    padding: 0 16px;
-    width: 100%;
-    max-width: 580px;
-  }
-  
-  .hero-caption-card {
-    align-items: center;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .hero-caption-heading {
-    font-size: clamp(1.8rem, 6.5vw, 2.5rem);
-    line-height: 1.2;
-    text-align: center;
-  }
-
-  .hero-caption-subtext {
-    font-size: clamp(0.92rem, 3.8vw, 1.05rem);
-    text-align: center;
-    margin: 4px 0 10px;
-  }
-
-  .hero-caption-buttons {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .btn-caption-primary,
-  .btn-caption-secondary {
-    padding: 10px 20px;
-    font-size: 0.92rem;
+    display: none !important;
   }
 
   /* Reduce gap to About Section on Mobile */
@@ -2875,6 +2854,10 @@ body::before {
     padding: 40px 0 60px;
   }
 
+  .prod-pedestal-fixed {
+    display: none !important;
+  }
+
   .prod-main-title {
     font-size: clamp(1.8rem, 6.5vw, 2.5rem);
     text-align: center;
@@ -2907,7 +2890,7 @@ body::before {
     height: 1px;
   }
 
-  /* Store Section */
+  /* Store Section Mobile Centering */
   .os-section {
     padding: 50px 0;
   }
@@ -2916,34 +2899,69 @@ body::before {
     flex-direction: column;
     gap: 35px;
     padding: 0 16px;
+    text-align: center;
+  }
+
+  .os-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .os-pill-badge {
+    align-self: center !important;
+    margin: 0 auto 16px !important;
   }
 
   .os-main-title {
     font-size: clamp(1.8rem, 6.5vw, 2.4rem);
+    text-align: center;
   }
 
   .os-subtitle {
     font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 14px;
   }
 
   .os-description {
     font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 24px;
   }
 
   .os-features-grid {
     grid-template-columns: 1fr;
     gap: 10px;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 30px;
+    text-align: left;
   }
 
   .os-actions {
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
   }
 
   .os-btn-primary, .os-btn-secondary {
     width: 100%;
     text-align: center;
     justify-content: center;
+  }
+
+  .os-info-rows {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .os-info-row {
+    justify-content: center;
+    text-align: center;
   }
 
   /* Footer */

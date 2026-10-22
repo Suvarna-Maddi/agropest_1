@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function CategorySection({ onSelectCategory }) {
+  const navigate = useNavigate();
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -8,43 +10,50 @@ export function CategorySection({ onSelectCategory }) {
     {
       id: 'insecticides',
       name: 'Insecticides',
-      filter: 'Insecticide',
+      filter: 'insecticide',
+      route: '/products?cat=insecticide',
       image: '/insecticide.png',
     },
     {
       id: 'herbicides',
       name: 'Herbicides',
-      filter: 'Herbicide',
+      filter: 'herbicide',
+      route: '/products?cat=herbicide',
       image: '/herbicide.png',
     },
     {
       id: 'fungicides',
       name: 'Fungicides',
-      filter: 'Fungicide',
+      filter: 'fungicide',
+      route: '/products?cat=fungicide',
       image: '/fungicide.png',
     },
     {
       id: 'organic-nutrients',
       name: 'Organic Nutrients',
-      filter: 'Nutrient',
+      filter: 'organic',
+      route: '/products?cat=organic',
       image: '/organic nutrients.png',
     },
     {
       id: 'pest-traps',
       name: 'Pest Traps',
-      filter: 'Trap',
+      filter: 'trap',
+      route: '/products?cat=trap',
       image: '/pesttraps.png',
     },
     {
       id: 'fertilizers',
       name: 'Fertilizers',
-      filter: 'Fertilizer',
+      filter: 'organic',
+      route: '/products?cat=organic',
       image: '/fertilizer.png',
     },
     {
       id: 'drones',
       name: 'Agri Drones',
-      filter: 'Drone',
+      filter: 'drone',
+      route: '/services',
       image: '/drone.png',
     },
   ];
@@ -76,14 +85,13 @@ export function CategorySection({ onSelectCategory }) {
     return () => cancelAnimationFrame(animationFrameId);
   }, [isHovered]);
 
-  const handleCategoryClick = (filterName) => {
-    if (onSelectCategory) {
-      onSelectCategory(filterName);
+  const handleCategoryClick = (cat) => {
+    if (cat.route) {
+      navigate(cat.route);
+    } else if (onSelectCategory) {
+      onSelectCategory(cat.filter);
     } else {
-      const elem = document.getElementById('products');
-      if (elem) {
-        elem.scrollIntoView({ behavior: 'smooth' });
-      }
+      navigate(`/products?cat=${cat.filter}`);
     }
   };
 
@@ -167,7 +175,7 @@ export function CategorySection({ onSelectCategory }) {
               <div
                 key={`${cat.id}-${idx}`}
                 className="cat-card"
-                onClick={() => handleCategoryClick(cat.filter)}
+                onClick={() => handleCategoryClick(cat)}
               >
                 {/* DIRECT PRODUCT IMAGE WRAPPER */}
                 <div className="cat-product-wrapper">
@@ -186,7 +194,7 @@ export function CategorySection({ onSelectCategory }) {
                   className="cat-explore-btn"
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleCategoryClick(cat.filter);
+                    handleCategoryClick(cat);
                   }}
                 >
                   Explore

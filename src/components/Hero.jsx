@@ -14,8 +14,11 @@ export const Hero = () => {
 
   return (
     <section className="hero-section" id="home">
-      {/* Full-width hero.png background image */}
-      <img src="/hero.png" alt="AgroPest Hero Background" className="hero-bg-full" />
+      {/* Responsive hero image: heromobile.jpg on mobile, hero.png on desktop */}
+      <picture className="hero-picture">
+        <source media="(max-width: 768px)" srcSet="/heromobile.jpg" />
+        <img src="/hero.png" alt="AgroPest Hero Background" className="hero-bg-full" />
+      </picture>
 
       {/* Left side 40% width caption card container */}
       <div className="hero-content-wrapper-left">

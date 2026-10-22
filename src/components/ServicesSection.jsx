@@ -8,35 +8,40 @@ export const ServicesSection = () => {
       title: "Pesticides",
       desc: "Effective crop protection solutions to control pests and ensure higher yields.",
       img: "/insecticide.png",
-      icon: "fas fa-leaf"
+      icon: "fas fa-leaf",
+      link: "/products?cat=insecticide"
     },
     {
       id: 2,
       title: "Pest Traps",
       desc: "Smart trapping solutions to monitor and manage pests sustainably.",
       img: "/pesttraps.png",
-      icon: "fas fa-bug"
+      icon: "fas fa-bug",
+      link: "/products?cat=trap"
     },
     {
       id: 3,
       title: "Fertilizers",
       desc: "High-quality nutrients for stronger growth and healthier crops.",
       img: "/fertilizer.png",
-      icon: "fas fa-seedling"
+      icon: "fas fa-seedling",
+      link: "/products?cat=organic"
     },
     {
       id: 4,
       title: "Drone Services",
       desc: "Advanced drone spraying for precise, efficient and cost-effective farming.",
       img: "/drone.png",
-      icon: "fas fa-helicopter"
+      icon: "fas fa-helicopter",
+      link: "/services"
     },
     {
       id: 5,
       title: "Farm Visit",
       desc: "Expert field support and on-site guidance for better crop management.",
       img: "/farmvisit.png",
-      icon: "fas fa-user-tie"
+      icon: "fas fa-user-tie",
+      link: "/services"
     }
   ];
 
@@ -72,7 +77,7 @@ export const ServicesSection = () => {
             </div>
             <h3 className="srv-card-title">{card.title}</h3>
             <p className="srv-card-desc">{card.desc}</p>
-            <Link to="/services" className="srv-card-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Learn More &rarr;</Link>
+            <Link to={card.link} className="srv-card-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Learn More &rarr;</Link>
           </div>
         ))}
       </div>

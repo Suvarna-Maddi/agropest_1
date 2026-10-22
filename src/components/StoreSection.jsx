@@ -16,7 +16,7 @@ export const StoreSection = () => {
       <div className="os-wrapper">
         {/* Left Side Content */}
         <div className="os-content">
-          <div className="cat-pill-badge" style={{ alignSelf: 'flex-start', marginBottom: '20px' }}>
+          <div className="cat-pill-badge os-pill-badge">
             <svg className="cat-badge-leaf-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17 8C8 10 5 16 5 21c5 0 11-3 13-12 0 0-1-1-1z" />
             </svg>

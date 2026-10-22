@@ -203,30 +203,57 @@ p { font-size: 1.1rem; line-height: 1.7; color: #475569; }
 .stat-col p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.4; }
 
 /* --- 4. WHAT WE DO --- */
-.services-carousel { display: flex; align-items: center; justify-content: center; gap: 1rem; }
+.services-carousel { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 1rem; 
+  width: 100%;
+}
 .nav-btn {
   background: white; border: 1px solid #e2e8f0; width: 50px; height: 50px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center; color: #16a34a;
   cursor: pointer; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s;
 }
 .nav-btn:hover { background: #16a34a; color: white; }
-.carousel-track { display: flex; gap: 2rem; overflow: hidden; padding: 2rem 0; }
+.carousel-track { 
+  display: flex; 
+  gap: 2rem; 
+  overflow-x: auto; 
+  overflow-y: hidden;
+  padding: 1.5rem 1rem; 
+  width: 100%;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
 .carousel-item {
-  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
-  opacity: 0.5; transform: scale(0.8); transition: all 0.4s ease;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 1.2rem;
+  opacity: 0.6; 
+  transform: scale(0.88); 
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+  user-select: none;
 }
 .carousel-item.active { opacity: 1; transform: scale(1); }
 .c-icon-wrap {
-  width: 140px; height: 140px; border-radius: 50%;
-  background: white; border: 8px solid #f0fdf4;
+  width: 130px; height: 130px; border-radius: 50%;
+  background: white; border: 6px solid #f0fdf4;
   display: flex; align-items: center; justify-content: center; color: #16a34a;
-  box-shadow: 0 20px 40px rgba(22, 163, 74, 0.15);
+  box-shadow: 0 15px 35px rgba(22, 163, 74, 0.15);
 }
 .carousel-item.active .c-icon-wrap {
   background: white; color: #16a34a;
   border-color: #86efac; box-shadow: 0 20px 50px rgba(22, 163, 74, 0.3);
 }
-.carousel-item h4 { font-weight: 700; font-size: 1.2rem; }
+.carousel-item h4 { font-weight: 700; font-size: 1.1rem; margin-top: 4px; }
 
 /* --- 5. WHY CHOOSE US --- */
 .why-choose-ultra { background: #fafdfa; }
@@ -419,8 +446,8 @@ p { font-size: 1.1rem; line-height: 1.7; color: #475569; }
 }
 @media (max-width: 768px) {
   .container { padding: 0 1.25rem; }
-  .about-hero { padding-top: 1rem; }
-  .hero-grid { padding-top: 1rem; gap: 2rem; }
+  .about-hero { padding-top: 85px; }
+  .hero-grid { padding-top: 0.5rem; gap: 2rem; }
   .hero-actions {
     flex-direction: column;
     width: 100%;
@@ -455,6 +482,17 @@ p { font-size: 1.1rem; line-height: 1.7; color: #475569; }
   .presence-content .btn-solid {
     width: 100%;
     justify-content: center;
+  }
+  .choose-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .badge-text.center-mobile {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

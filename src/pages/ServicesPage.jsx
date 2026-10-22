@@ -44,7 +44,19 @@ const ServicesPage = () => {
           <p className="hero-desc-exact">
             From crop protection to modern farming services, we support farmers at every stage with trusted products, advanced technology, and expert guidance.
           </p>
-          <a href="#services" className="btn-explore">Explore Our Services <ArrowRight size={18}/></a>
+          <a 
+            href="#services" 
+            className="btn-explore"
+            onClick={(e) => {
+              e.preventDefault();
+              const elem = document.getElementById('services');
+              if (elem) {
+                elem.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            Explore Our Services <ArrowRight size={18}/>
+          </a>
         </div>
       </section>
 
@@ -116,7 +128,7 @@ const ServicesPage = () => {
         <div className="container reveal">
           
           <div className="why-premium-header">
-            <h5 className="sub-heading text-green-300">OUR COMMITMENT</h5>
+            <div className="badge-text center"><span className="line"></span> OUR COMMITMENT <span className="line"></span></div>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6">Why Choose AgroPest?</h2>
             <p className="text-xl text-green-50 max-w-2xl mx-auto">
               Our unmatched experience, premium quality products, and cutting-edge modern solutions make us the most trusted partner for progressive farmers across Telangana.
