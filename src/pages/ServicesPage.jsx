@@ -140,7 +140,7 @@ const ServicesPage = () => {
             <div className="glass-card card-large span-2">
               <div className="glass-icon-circle"><Trophy size={36}/></div>
               <div>
-                <h3 className="glass-number">18+ Years</h3>
+                <h3 className="glass-number">19+ Years</h3>
                 <h4 className="glass-title">Of Farming Excellence</h4>
                 <p className="glass-desc">Over a decade and a half of deep-rooted trust, delivering proven results to thousands of local farmers.</p>
               </div>

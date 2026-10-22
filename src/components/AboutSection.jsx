@@ -16,7 +16,7 @@ export const AboutSection = () => {
           Leading the Future of <span className="cat-title-green">Farming</span>
         </h2>
         <p className="cat-subtitle" style={{ margin: '0 auto' }}>
-          Empowering farmers through 18+ years of dedicated agricultural expertise and precision drone operations.
+          Empowering farmers through 19+ years of dedicated agricultural expertise and precision drone operations.
         </p>
       </div>
 
@@ -48,7 +48,7 @@ export const AboutSection = () => {
 
           <p className="about-overlay-badge">
             <i className="fas fa-certificate" style={{ marginRight: '6px', color: '#16a34a' }}></i>
-            Backed by over 18 years of agricultural expertise
+            Backed by over 19+ years of agricultural expertise
           </p>
 
           <div className="about-overlay-actions">

@@ -85,17 +85,41 @@ export function Chatbot() {
       };
     }
 
+    // 6b. Price / Cost / Rate enquiries
+    if (/price|cost|rate|discount|wholesale|mrp|how much/i.test(q)) {
+      return {
+        text: `💰 **Pricing & Wholesale Availability:**\n\nWe provide competitive farmer-direct rates and wholesale bulk discounts on all products and drone spraying!\n\nBecause agrochemical prices fluctuate with current batch stocks and seasonal manufacturer offers, please contact our counter directly:\n\n📞 **Call for Instant Price Quote:** [${business.phone}](tel:+919014255803)\n💬 **WhatsApp Quote:** [Ask Price on WhatsApp](${business.whatsappUrl})\n📍 **Store Counter:** Bhavani Traders, Ananthapuram, Gadwal`,
+        suggestions: ["Call Store Now", "WhatsApp Quote", "Browse Products"]
+      };
+    }
+
+    // 6c. Dosage & Spraying Guidelines
+    if (/dose|dosage|how to use|how much ml|per acre|per liter|tank|how to apply|application/i.test(q)) {
+      return {
+        text: `⚖️ **Recommended Dosage & Application:**\n\n- **Liquid Formulations (EC/SC/SL):** Typically 1.5 ml to 2 ml per liter of water (approx. 25-35 ml per 15-liter knapsack tank or 250-500 ml per acre).\n- **Granular/Powder (WP/WDG/SP):** Typically 1 to 2 grams per liter of water.\n- **Drone Spraying:** Highly concentrated low-volume mixture (approx. 10-12 liters of water per acre).\n\n⚠️ *Always confirm exact crop stage and target pest before mixing chemicals!* For accurate tank-mixing guidance, call our agronomist at [${business.phone}](tel:+919014255803).`,
+        suggestions: ["Ask about a Product", "Drone Spraying", "Call Agronomist"]
+      };
+    }
+
+    // 6d. Experience & Company background
+    if (/experience|years|about|who are you|bhavani traders/i.test(q)) {
+      return {
+        text: `🏆 **About AgroPest & Bhavani Traders:**\n\nWith over **19+ years of dedicated agricultural excellence**, Bhavani Traders has been the trusted partner for thousands of farmers across Telangana.\n\nWe deliver certified genuine crop protection products, organic nutrition regimens, and cutting-edge drone spraying operations.\n\nFeel free to ask any question or visit our store in Gadwal!`,
+        suggestions: ["Store Location", "Our Services", "Browse Products"]
+      };
+    }
+
     // 7. Search by specific pest / disease / weed
     const matchedByPest = products.filter(p => {
-      const target = (p.pests + ' ' + p.modeOfAction + ' ' + p.tagline).toLowerCase();
-      const words = q.split(/\s+/).filter(w => w.length > 3);
+      const target = (p.pests + ' ' + p.modeOfAction + ' ' + p.tagline + ' ' + (p.category || '')).toLowerCase();
+      const words = q.split(/[\s,./?!]+/).filter(w => w.length > 2);
       return words.some(w => target.includes(w));
     });
 
     // 8. Search by specific crop
     const matchedByCrop = products.filter(p => {
       const cropText = (p.crops + ' ' + p.tagline).toLowerCase();
-      const words = q.split(/\s+/).filter(w => w.length > 3);
+      const words = q.split(/[\s,./?!]+/).filter(w => w.length > 2);
       return words.some(w => cropText.includes(w));
     });
 
@@ -154,7 +178,7 @@ export function Chatbot() {
 
     // Default intelligent fallback
     return {
-      text: `Thank you for your question! AgroPest carries over **${knowledgeBase.totalProducts} verified agricultural solutions** from leading companies like Adama, Syngenta, and top crop science leaders.\n\nCould you please mention:\n1. Your crop (e.g. Paddy, Cotton, Chili, Maize, Sugarcane)\n2. The specific pest, disease (fungus), or weed you are dealing with\n\nOr contact our on-field agronomist directly at [${business.phone}](tel:+919014255803) or via [WhatsApp](${business.whatsappUrl}).`,
+      text: `Thank you for asking! AgroPest carries over **${knowledgeBase.totalProducts} verified agricultural solutions** across 19+ years of farming service.\n\nYou can ask me:\n- Specific product details (e.g., *"Tell me about Agas"*, *"Chess"*, *"Ampligo"*)\n- Pest issues (e.g., *"Stem borer in Paddy"*, *"Pink bollworm"*, *"Aphids"*, *"Fungus"*)\n- Rates, dosages, store location, or drone booking!\n\nOr connect with our agronomist directly at [${business.phone}](tel:+919014255803) or on [WhatsApp](${business.whatsappUrl}).`,
       suggestions: ["Paddy / Rice Pests", "Cotton Bollworm", "Drone Spraying", "Store Location"]
     };
   };
