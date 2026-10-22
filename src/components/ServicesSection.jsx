@@ -33,7 +33,8 @@ export const ServicesSection = () => {
       desc: "Advanced drone spraying for precise, efficient and cost-effective farming.",
       img: "/drone.png",
       icon: "fas fa-helicopter",
-      link: "/services"
+      link: "tel:+919010402648",
+      btnText: "Book Drone"
     },
     {
       id: 5,
@@ -77,7 +78,15 @@ export const ServicesSection = () => {
             </div>
             <h3 className="srv-card-title">{card.title}</h3>
             <p className="srv-card-desc">{card.desc}</p>
-            <Link to={card.link} className="srv-card-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Learn More &rarr;</Link>
+            {card.link.startsWith('tel:') ? (
+              <a href={card.link} className="srv-card-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                <i className="fas fa-phone-alt" style={{ marginRight: '6px', fontSize: '0.85rem' }}></i> {card.btnText || 'Book Now'} &rarr;
+              </a>
+            ) : (
+              <Link to={card.link} className="srv-card-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>
+                {card.btnText || 'Learn More'} &rarr;
+              </Link>
+            )}
           </div>
         ))}
       </div>

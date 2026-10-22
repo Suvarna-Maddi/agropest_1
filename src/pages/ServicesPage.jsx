@@ -110,6 +110,9 @@ const ServicesPage = () => {
                 </div>
                 <h3>Drone Spraying</h3>
                 <p>Advanced drone spraying for precise, efficient, and large-scale crop care.</p>
+                <a href="tel:+919010402648" style={{ marginTop: '8px', fontSize: '0.85rem', fontWeight: 700, color: '#16a34a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  <i className="fas fa-phone-alt"></i> Book Drone
+                </a>
               </div>
               <div className="timeline-node">
                 <div className="node-icon">

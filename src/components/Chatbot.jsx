@@ -64,7 +64,7 @@ export function Chatbot() {
     // 4. Drone spraying service
     if (/drone|spray|aerial|acre|hectare|uav/i.test(q)) {
       return {
-        text: `🚁 **Precision Drone Spraying Services:**\n\nAgroPest provides state-of-the-art agricultural drone operations across Telangana:\n\n✨ **Benefits:**\n- Up to **30 Acres covered per hour**\n- **90% water saving** compared to manual spraying\n- Ultra-fine droplet dispersion for 100% uniform canopy penetration\n- Zero human exposure to chemicals for maximum farmer safety\n- Ideal for Paddy, Cotton, Chili, Sugarcane, Maize, and Orchards\n\n📞 **Book a Drone Flight:** Call [${business.phone}](tel:+919014255803) or message us on [WhatsApp](${business.whatsappUrl}) for slot scheduling and per-acre pricing!`,
+        text: `🚁 **Precision Drone Spraying Services:**\n\nAgroPest provides state-of-the-art agricultural drone operations across Telangana:\n\n✨ **Benefits:**\n- Up to **30 Acres covered per hour**\n- **90% water saving** compared to manual spraying\n- Ultra-fine droplet dispersion for 100% uniform canopy penetration\n- Zero human exposure to chemicals for maximum farmer safety\n- Ideal for Paddy, Cotton, Chili, Sugarcane, Maize, and Orchards\n\n📞 **Book a Drone Flight (Dedicated Number):** Call [${business.droneBookingPhone || '+91 90104 02648'}](tel:+919010402648) or message on [WhatsApp](${business.whatsappUrl}) for slot scheduling and per-acre pricing!`,
         suggestions: ["Book Drone Spraying", "Store Location", "View Pesticides"]
       };
     }
