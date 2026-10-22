@@ -35,8 +35,8 @@ export const Hero = () => {
           </p>
 
           <div className="hero-caption-buttons">
-            <a href="#products" onClick={scrollToProducts} className="btn-caption-primary">
-              Shop Now <i className="fas fa-shopping-bag"></i>
+            <a href="tel:+919014255803" className="btn-caption-primary">
+              Shop Now <i className="fas fa-phone-alt"></i>
             </a>
             
             <Link to="/products" className="btn-caption-secondary">
