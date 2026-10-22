@@ -3,20 +3,9 @@ import { Link } from 'react-router-dom';
 
 export const AboutSection = () => {
   return (
-    <section 
-      id="about" 
-      style={{ 
-        width: '100%', 
-        paddingTop: '70px', 
-        paddingBottom: '30px', 
-        paddingLeft: '0', 
-        paddingRight: '0', 
-        margin: '0', 
-        overflow: 'hidden'
-      }}
-    >
+    <section id="about" className="about-home-section">
       {/* Section Header Between Hero & About Banner Graphic */}
-      <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 40px', padding: '0 24px' }}>
+      <div className="about-home-header">
         <div className="cat-pill-badge" style={{ marginBottom: '14px' }}>
           <svg className="cat-badge-leaf-icon" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17 8C8 10 5 16 5 21c5 0 11-3 13-12 0 0-1-1-1z" />

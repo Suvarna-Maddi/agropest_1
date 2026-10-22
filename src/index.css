@@ -783,6 +783,24 @@ body::before {
   display: block;
 }
 
+/* === ABOUT HOME SECTION === */
+.about-home-section {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.about-home-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 35px;
+  padding: 0 24px;
+}
+
 /* === ABOUT SECTION IMAGE OVERLAY LAYOUT === */
 .about-banner-container {
   position: relative;
@@ -2745,7 +2763,7 @@ body::before {
     top: auto;
     left: auto;
     transform: none;
-    margin: 20px auto 30px;
+    margin: 14px auto 6px;
     text-align: center;
     align-items: center;
     padding: 0 16px;
@@ -2756,6 +2774,7 @@ body::before {
   .hero-caption-card {
     align-items: center;
     text-align: center;
+    gap: 8px;
   }
 
   .hero-caption-heading {
@@ -2767,7 +2786,7 @@ body::before {
   .hero-caption-subtext {
     font-size: clamp(0.92rem, 3.8vw, 1.05rem);
     text-align: center;
-    margin: 8px 0 16px;
+    margin: 4px 0 10px;
   }
 
   .hero-caption-buttons {
@@ -2779,6 +2798,31 @@ body::before {
   .btn-caption-secondary {
     padding: 10px 20px;
     font-size: 0.92rem;
+  }
+
+  /* Reduce gap to About Section on Mobile */
+  .about-home-section {
+    padding-top: 15px !important;
+    padding-bottom: 20px;
+  }
+
+  .about-home-header {
+    margin-bottom: 20px !important;
+    padding: 0 16px;
+  }
+
+  .about-home-header .cat-pill-badge {
+    margin-bottom: 8px !important;
+  }
+
+  .about-home-header .cat-main-title {
+    font-size: clamp(1.8rem, 6.8vw, 2.3rem) !important;
+    margin-bottom: 8px !important;
+  }
+
+  .about-home-header .cat-subtitle {
+    font-size: 0.92rem;
+    line-height: 1.5;
   }
 
   /* Services Section */
