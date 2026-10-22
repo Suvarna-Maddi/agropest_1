@@ -32,113 +32,41 @@ export const AboutSection = () => {
       </div>
 
       <div className="about-banner-container">
-        {/* Background Image Banner */}
+        {/* Background Image Banner with responsive picture */}
         <img 
           src="/abouthero.png" 
           alt="About AgroPest Hero" 
           className="about-banner-img" 
         />
 
-        {/* Company Details Overlaid Directly On Image */}
+        {/* Company Details Overlaid Seamlessly */}
         <div className="about-banner-overlay">
-
-          <h2 style={{
-            fontFamily: "'Montserrat', 'Poppins', sans-serif",
-            fontSize: 'clamp(24px, 3.3vw, 40px)',
-            fontWeight: 800,
-            color: '#0f172a',
-            lineHeight: 1.2,
-            margin: '0 0 10px 0',
-            letterSpacing: '0.01em',
-            wordSpacing: '0.08em',
-            whiteSpace: 'nowrap'
-          }}>
-            Rooted in Sustainable <span style={{ color: '#15803d' }}>Excellence</span>
+          <h2 className="about-overlay-title">
+            Rooted in Sustainable <span className="cat-title-green">Excellence</span>
           </h2>
 
-          <p style={{
-            fontSize: 'clamp(16px, 1.5vw, 19px)',
-            color: '#15803d',
-            fontWeight: 700,
-            margin: '0 0 16px 0',
-            letterSpacing: '0.02em'
-          }}>
+          <p className="about-overlay-tagline">
             Empowering Farmers with Modern Agricultural Solutions
           </p>
 
-          <p style={{
-            fontSize: 'clamp(16px, 1.5vw, 19.5px)',
-            color: '#0f172a',
-            lineHeight: 1.75,
-            fontWeight: 600,
-            wordSpacing: '0.12em',
-            letterSpacing: '0.015em',
-            margin: '0 0 8px 0'
-          }}>
-            AgroPest supports the farming community with high-quality fertilizers,<br />
-            pesticides, and essential nutrients. We deliver reliable, proven inputs<br />
-            that consistently improve crop health and maximize yield season after season.
+          <p className="about-overlay-desc">
+            AgroPest supports the farming community with high-quality fertilizers, pesticides, and essential nutrients. We deliver reliable, proven inputs that consistently improve crop health and maximize yield season after season.
           </p>
 
-          <p style={{
-            fontSize: 'clamp(15px, 1.4vw, 18.5px)',
-            color: '#1e293b',
-            lineHeight: 1.75,
-            fontWeight: 500,
-            wordSpacing: '0.12em',
-            letterSpacing: '0.015em',
-            margin: '0 0 12px 0'
-          }}>
-            Our advanced <strong>drone spraying technology</strong> transforms traditional farming<br />
-            into a highly efficient process. This precision approach minimizes resource<br />
-            usage and provides crop protection while prioritizing farmer safety.
+          <p className="about-overlay-subdesc">
+            Our advanced <strong>drone spraying technology</strong> transforms traditional farming into a highly efficient process, minimizing resource usage and protecting crops while prioritizing farmer safety.
           </p>
 
-          <p style={{
-            fontSize: '14px',
-            color: '#475569',
-            fontWeight: 600,
-            fontStyle: 'italic',
-            margin: '0 0 20px 0'
-          }}>
+          <p className="about-overlay-badge">
+            <i className="fas fa-certificate" style={{ marginRight: '6px', color: '#16a34a' }}></i>
             Backed by over 18 years of agricultural expertise
           </p>
 
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-            <Link 
-              to="/about" 
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '10px 22px',
-                background: 'linear-gradient(135deg, #16a34a, #15803d)',
-                color: '#fff',
-                borderRadius: '30px',
-                textDecoration: 'none',
-                fontWeight: 700,
-                fontSize: '15px',
-                boxShadow: '0 4px 15px rgba(22, 163, 74, 0.3)'
-              }}
-            >
-              Learn More About Us &rarr;
+          <div className="about-overlay-actions">
+            <Link to="/about" className="about-btn-primary">
+              Learn More About Us <i className="fas fa-arrow-right"></i>
             </Link>
-            <Link 
-              to="/services" 
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '10px 22px',
-                background: '#ffffff',
-                color: '#15803d',
-                border: '2px solid #16a34a',
-                borderRadius: '30px',
-                textDecoration: 'none',
-                fontWeight: 700,
-                fontSize: '15px'
-              }}
-            >
+            <Link to="/services" className="about-btn-secondary">
               Our Services
             </Link>
           </div>
