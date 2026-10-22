@@ -30,10 +30,6 @@ export function Chatbot() {
   useEffect(() => {
     if (isOpen) {
       scrollToBottom();
-      // Auto focus text input so users can type right away
-      setTimeout(() => {
-        inputRef.current?.focus();
-      }, 100);
     }
   }, [messages, isOpen, isTyping]);
 
