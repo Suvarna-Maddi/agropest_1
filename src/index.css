@@ -1852,7 +1852,7 @@ body::before {
 .srv-explore-wrapper {
   text-align: center;
   position: relative;
-  z-index: 2;
+  z-index: 10;
   margin-bottom: 60px;
   display: flex;
   align-items: center;
@@ -1870,7 +1870,12 @@ body::before {
   font-weight: 700;
   cursor: pointer;
   box-shadow: 0 10px 25px rgba(6, 78, 59, 0.3);
-  transition: transform 0.3s;
+  transition: transform 0.3s, background 0.3s;
+  position: relative;
+  z-index: 12;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .srv-explore-btn:hover {
   transform: translateY(-2px);

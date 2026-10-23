@@ -93,7 +93,17 @@ export const ServicesSection = () => {
 
       {/* Explore All Services */}
       <div className="srv-explore-wrapper">
-        <Link to="/services" className="srv-explore-btn" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}>Explore All Services &rarr;</Link>
+        <Link 
+          to="/services" 
+          className="srv-explore-btn" 
+          style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', cursor: 'pointer' }}
+          onClick={(e) => {
+            e.stopPropagation();
+            window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+          }}
+        >
+          Explore All Services &rarr;
+        </Link>
         <div className="srv-explore-arrow">
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M90 10 Q 50 20 20 80" stroke="currentColor" strokeWidth="4" strokeLinecap="round" fill="none" />
