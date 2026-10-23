@@ -49,15 +49,24 @@ export const StoreSection = () => {
 
           <div className="os-actions">
             <a 
-              href="https://www.google.com/maps/place/Bhavani+Traders/@16.1761345,77.8643508,846m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3bb601a56fd71a21:0xd2fd6a2ed0df9f1e!8m2!3d16.1761345!4d77.8669257!16s%2Fg%2F11y8cdghrk?entry=ttu" 
+              href="https://maps.app.goo.gl/ac61RZiPrJ2QepAU9" 
               target="_blank" 
               rel="noopener noreferrer"
               className="os-btn-primary"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
             >
-              Get Directions
+              <i className="fas fa-location-arrow" style={{ marginRight: '8px' }}></i> Get Directions
             </a>
-            <a href="tel:+919014255803" className="os-btn-secondary">
-              Call Now
+            <a 
+              href="tel:+919014255803" 
+              className="os-btn-secondary"
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
+            >
+              <i className="fas fa-phone-alt" style={{ marginRight: '8px' }}></i> Call Now
             </a>
           </div>
 
