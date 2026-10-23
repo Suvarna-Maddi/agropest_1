@@ -124,7 +124,7 @@ const AboutPage = () => {
       <section className="about-hero">
         <div className="container hero-grid">
           <div className="hero-content reveal">
-            <div className="badge-text"><span className="line"></span> ABOUT AGROPEST</div>
+            <div className="badge-text center-mobile"><span className="line"></span> ABOUT AGROPEST <span className="line"></span></div>
             <h1>
               Empowering Farmers<br/>with <span className="text-glow">Smart</span><br/>Agricultural Solutions
             </h1>
@@ -166,7 +166,7 @@ const AboutPage = () => {
       <section className="our-story">
         <div className="container story-grid">
           <div className="story-content reveal">
-            <div className="badge-text"><span className="line"></span> OUR STORY</div>
+            <div className="badge-text center-mobile"><span className="line"></span> OUR STORY <span className="line"></span></div>
             <h2>Rooted in Trust & <span className="text-glow">Growth</span></h2>
             <p>
               AgroPest has been a trusted name in agriculture, providing high-quality pesticides, fertilizers, and advanced farming solutions. We are committed to helping farmers improve crop protection, enhance productivity, and adopt modern techniques for a more sustainable and prosperous future.
