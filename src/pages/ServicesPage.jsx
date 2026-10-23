@@ -36,12 +36,11 @@ const ServicesPage = () => {
 
           {/* Left-side quote overlay on the image - only in mobile view */}
           <div className="hero-mobile-left-overlay">
-            <div className="hero-mob-quote-badge">
-              <span className="badge-dot"></span>
-              <span>Smart Farming • Real Results</span>
-            </div>
+            <span className="hero-mob-quote-badge">
+              <span className="badge-dot"></span> SMART FARMING
+            </span>
             <h3 className="hero-mob-quote-title">
-              Precision Care<br/>
+              Precision Care <br />
               <span className="text-emerald">For Every Acre</span>
             </h3>
             <p className="hero-mob-quote-sub">
