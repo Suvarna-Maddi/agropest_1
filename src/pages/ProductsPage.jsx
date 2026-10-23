@@ -103,35 +103,35 @@ const ProductsPage = ({ category }) => {
      
 
 
-{/* ========== HERO (CONSISTENT WITH OTHER PAGES) ========== */}
+{/* ========== HERO (CLEAN, MODERN PRODUCT SHOWCASE BANNER) ========== */}
 <section className="products-hero-exact">
-  <picture>
-    <source media="(max-width: 900px)" srcSet="/serviceheromb.png" />
-    <img src="/hero.png" alt="AgroPest Products" className="products-hero-bg" />
-  </picture>
+  {/* Ambient decorative glowing backdrops */}
+  <div className="products-hero-glow-1"></div>
+  <div className="products-hero-glow-2"></div>
 
-  <div className="products-hero-content">
-    <span className="products-kicker">
-      <i className="fa-solid fa-seedling"></i> Multi-Product Excellence
-    </span>
+  <div className="container products-hero-inner">
+    <div className="products-hero-content">
+      <span className="products-kicker">
+        <i className="fa-solid fa-seedling"></i> Multi-Product Excellence
+      </span>
 
-    <h1 className="products-hero-title">
-      Precision Inputs & <br />
-      <span className="text-highlight">Smart Solutions</span> for <br />
-      Higher Yields
-    </h1>
+      <h1 className="products-hero-title">
+        Precision Inputs & <br />
+        <span className="text-highlight">Smart Solutions</span> for Higher Yields
+      </h1>
 
-    <p className="products-hero-desc">
-      Explore our certified catalog of insecticides, herbicides, fungicides, organic nutrients, and pest traps — engineered to maximize harvest productivity and crop resilience.
-    </p>
+      <p className="products-hero-desc">
+        Explore our certified catalog of insecticides, herbicides, fungicides, organic nutrients, and pest traps — engineered to maximize harvest productivity and crop resilience.
+      </p>
 
-    <div className="products-cta-row">
-      <a className="btn-hero-primary" href="#filters">
-        <i className="fa-solid fa-filter"></i> Filter by Category
-      </a>
-      <a className="btn-hero-secondary" href="#showcase">
-        <i className="fa-solid fa-basket-shopping"></i> Browse Products
-      </a>
+      <div className="products-cta-row">
+        <a className="btn-hero-primary" href="#filters">
+          <i className="fa-solid fa-filter"></i> Filter by Category
+        </a>
+        <a className="btn-hero-secondary" href="#showcase">
+          <i className="fa-solid fa-basket-shopping"></i> Browse 188+ Products
+        </a>
+      </div>
     </div>
   </div>
 
