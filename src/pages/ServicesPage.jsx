@@ -28,10 +28,27 @@ const ServicesPage = () => {
     <div className="services-page-v2">
       {/* --- 1. HERO SECTION (EXACT IMAGE UI) --- */}
       <section className="hero-exact">
-        <picture>
-          <source media="(max-width: 900px)" srcSet="/serviceheromb.png" />
-          <img src="/serviceshero.png" alt="AgroPest Hero" className="hero-exact-bg" />
-        </picture>
+        <div className="hero-image-wrapper">
+          <picture>
+            <source media="(max-width: 900px)" srcSet="/serviceheromb.png" />
+            <img src="/serviceshero.png" alt="AgroPest Hero" className="hero-exact-bg" />
+          </picture>
+
+          {/* Left-side quote overlay on the image - only in mobile view */}
+          <div className="hero-mobile-left-overlay">
+            <div className="hero-mob-quote-badge">
+              <span className="badge-dot"></span>
+              <span>Smart Farming • Real Results</span>
+            </div>
+            <h3 className="hero-mob-quote-title">
+              Precision Care<br/>
+              <span className="text-emerald">For Every Acre</span>
+            </h3>
+            <p className="hero-mob-quote-sub">
+              Empowering farmers with modern agri-tech & drone solutions.
+            </p>
+          </div>
+        </div>
         
         <div className="hero-exact-content reveal">
           <h5 className="sub-heading">OUR SERVICES</h5>

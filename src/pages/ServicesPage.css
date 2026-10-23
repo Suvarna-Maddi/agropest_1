@@ -61,6 +61,15 @@
   align-items: center;
   /* We let the image dictate the height natively */
 }
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-mobile-left-overlay {
+  display: none;
+}
+
 .hero-exact picture {
   width: 100%;
   display: block;
@@ -132,8 +141,14 @@
     background: linear-gradient(180deg, #eafbf0 0%, #dcfce7 60%, #bbf7d0 100%);
     overflow: hidden;
   }
-  .hero-exact picture {
+  .hero-image-wrapper {
+    position: relative;
     order: 1;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .hero-exact picture {
     width: 100%;
     margin-top: 0;
   }
@@ -146,6 +161,66 @@
     display: block;
     mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  }
+  
+  /* Left-side quote overlay on the image on mobile */
+  .hero-mobile-left-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    max-width: 58%;
+    z-index: 4;
+    pointer-events: none;
+    animation: fadeIn 0.8s ease-out;
+  }
+  .hero-mob-quote-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(22, 163, 74, 0.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    color: #15803d;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+  .hero-mob-quote-badge .badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #16a34a;
+  }
+  .hero-mob-quote-title {
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1.15;
+    color: #064e3b;
+    margin: 0 0 6px;
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.8);
+    letter-spacing: -0.3px;
+  }
+  .hero-mob-quote-title .text-emerald {
+    color: #16a34a;
+  }
+  .hero-mob-quote-sub {
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: #1e293b;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+    max-width: 95%;
   }
   .hero-exact-content {
     position: relative;
