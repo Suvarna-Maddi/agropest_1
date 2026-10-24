@@ -246,7 +246,7 @@ const ServicesPage = () => {
             
             <div className="step-card">
               <div className="step-image-wrap">
-                <img src="https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Get Solution" />
+                <img src="/founder.png" alt="Get Expert Solutions" style={{ objectPosition: 'center 15%' }} />
               </div>
               <h4>Get Expert Solutions</h4>
               <p>Receive tailored product recommendations.</p>
