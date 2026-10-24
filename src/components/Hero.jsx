@@ -14,9 +14,9 @@ export const Hero = () => {
 
   return (
     <section className="hero-section" id="home">
-      {/* Responsive hero image: heromobile.jpg on mobile, hero.png on desktop */}
+      {/* Responsive hero image: home_hero.jpg on mobile, hero.png on desktop */}
       <picture className="hero-picture">
-        <source media="(max-width: 768px)" srcSet="/heromobile.jpg" />
+        <source media="(max-width: 768px)" srcSet="/home_hero.jpg" />
         <img src="/hero.png" alt="AgroPest Hero Background" className="hero-bg-full" />
       </picture>
 
