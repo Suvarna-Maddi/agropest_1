@@ -256,7 +256,7 @@ const ServicesPage = () => {
             
             <div className="step-card">
               <div className="step-image-wrap">
-                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Results" />
+                <img src="/better_results.png" alt="See Better Results" style={{ objectPosition: 'center 40%' }} />
               </div>
               <h4>See Better Results</h4>
               <p>Enjoy healthier crops and much higher yields.</p>
