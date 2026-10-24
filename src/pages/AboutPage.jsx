@@ -5,7 +5,6 @@ import {
   ChevronRight, ChevronLeft, MapPin, Quote, ArrowRight,
   Droplets, Bug, Crosshair, Users, Activity
 } from 'lucide-react';
-import founderImg from '../assets/about_img.png';
 import './AboutPage.css';
 
 const CountUp = ({ end, duration = 2000, suffix = "" }) => {
@@ -368,7 +367,7 @@ const AboutPage = () => {
           <div className="founder-visual reveal">
             <div className="silhouette-wrapper">
               <div className="silhouette-glow"></div>
-              <img src={founderImg} alt="AgroPest Founder" className="founder-portrait" />
+              <img src="/founder.jpg" alt="AgroPest Founder" className="founder-portrait" />
               <div className="s-ring r1"></div>
               <div className="s-ring r2"></div>
             </div>
