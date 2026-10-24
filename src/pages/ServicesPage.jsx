@@ -226,7 +226,7 @@ const ServicesPage = () => {
           <div className="how-steps-modern">
             <div className="step-card">
               <div className="step-image-wrap">
-                <img src="https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Contact Us" />
+                <img src="/shop.jpg" alt="Contact Us" style={{ objectPosition: 'center 35%' }} />
               </div>
               <h4>Contact Us</h4>
               <p>Reach out online or visit our local store.</p>
@@ -236,7 +236,7 @@ const ServicesPage = () => {
             
             <div className="step-card">
               <div className="step-image-wrap">
-                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Share Needs" />
+                <img src="/service_visit.png" alt="Share Your Needs" style={{ objectPosition: 'center 20%' }} />
               </div>
               <h4>Share Your Needs</h4>
               <p>Tell our experts about your crop challenges.</p>
