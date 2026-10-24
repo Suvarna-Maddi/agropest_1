@@ -1079,7 +1079,7 @@ body::before {
   .about-banner-img {
     height: 380px;
     object-fit: cover;
-    object-position: 22% center; /* Position the leaf sprout artwork properly to the left */
+    object-position: 76% center; /* Precisely centers the plant sprout and glowing pedestal on mobile */
     mask-image: linear-gradient(to bottom, black 50%, rgba(0, 0, 0, 0.4) 80%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 50%, rgba(0, 0, 0, 0.4) 80%, transparent 100%);
     display: block;
