@@ -44,45 +44,13 @@ export const Hero = () => {
           </p>
 
           <div className="hero-caption-buttons">
-            <a href="tel:+919014255803" className="btn-caption-primary">
+            <Link to="/products" className="btn-caption-primary">
               <i className="fas fa-shopping-cart"></i> Shop Now <i className="fas fa-chevron-right" style={{ fontSize: '0.75rem' }}></i>
-            </a>
-            
-            <Link to="/products" className="btn-caption-secondary">
-              View Products <i className="fas fa-chevron-right" style={{ fontSize: '0.75rem' }}></i>
             </Link>
-          </div>
-
-          <div className="hero-features-triad">
-            <div className="hero-feature-pill">
-              <div className="hero-feat-icon-circle">
-                <i className="fas fa-leaf"></i>
-              </div>
-              <div className="hero-feat-info">
-                <strong>Pesticides</strong>
-                <span>Protect Your Crops</span>
-              </div>
-            </div>
-
-            <div className="hero-feature-pill">
-              <div className="hero-feat-icon-circle">
-                <i className="fas fa-seedling"></i>
-              </div>
-              <div className="hero-feat-info">
-                <strong>Fertilizers</strong>
-                <span>Nourish for Higher Yield</span>
-              </div>
-            </div>
-
-            <div className="hero-feature-pill">
-              <div className="hero-feat-icon-circle">
-                <i className="fas fa-helicopter"></i>
-              </div>
-              <div className="hero-feat-info">
-                <strong>Drone Services</strong>
-                <span>Smart Farming for Tomorrow</span>
-              </div>
-            </div>
+            
+            <a href="tel:+919010402648" className="btn-caption-secondary">
+              <i className="fas fa-helicopter"></i> Drone Services <i className="fas fa-phone-alt" style={{ fontSize: '0.75rem', marginLeft: '2px' }}></i>
+            </a>
           </div>
         </div>
       </div>
