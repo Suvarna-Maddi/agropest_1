@@ -2927,35 +2927,39 @@ body::before {
     display: block;
   }
 
-  /* Overlay text over the mobile hero image exactly like reference image */
+  /* Overlay text over the mobile hero image - clean, readable, unobstructed */
   .hero-content-wrapper-left {
     display: flex !important;
     position: absolute;
-    top: 82px;
-    left: 4%;
+    top: 78px;
+    left: 4.5%;
     transform: none;
-    width: 82%;
-    max-width: 320px;
+    width: 68%;
+    max-width: 270px;
     z-index: 5;
     pointer-events: auto;
   }
 
   .hero-caption-card {
-    gap: 6px;
+    gap: 7px;
     align-items: flex-start;
     text-align: left;
   }
 
   .hero-badge-group {
+    display: flex;
+    align-items: center;
     gap: 5px;
     margin-bottom: 2px;
+    flex-wrap: wrap;
   }
 
   .hero-brand-pill {
-    padding: 4px 10px;
-    font-size: 11px;
-    border-radius: 14px;
-    box-shadow: 0 2px 8px rgba(21, 128, 61, 0.25);
+    padding: 3.5px 9px;
+    font-size: 10.5px;
+    font-weight: 800;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(21, 128, 61, 0.25);
   }
 
   .hero-brand-pill i {
@@ -2964,74 +2968,66 @@ body::before {
 
   .hero-store-pill {
     padding: 3px 8px;
-    font-size: 9.5px;
+    font-size: 9px;
+    font-weight: 800;
     border-radius: 12px;
   }
 
   .hero-caption-heading {
-    font-size: clamp(20px, 6.2vw, 26px);
-    line-height: 1.15;
-    letter-spacing: -0.4px;
-    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(255, 255, 255, 0.85);
+    font-size: clamp(17px, 5vw, 21px);
+    line-height: 1.18;
+    letter-spacing: -0.3px;
+    font-weight: 900;
+    color: #064e3b;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.98), 0 2px 8px rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-caption-heading .text-highlight {
+    color: #16a34a;
+    font-weight: 900;
   }
 
   .hero-heading-leaf {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .hero-caption-subtext {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.35;
-    margin: 2px 0 4px;
-    color: #1e293b;
-    font-weight: 700;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
+    margin: 1px 0 2px;
+    color: #0f172a;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.98);
+    max-width: 95%;
   }
 
   .hero-caption-buttons {
+    display: flex;
+    align-items: center;
     gap: 8px;
     margin-top: 4px;
-    margin-bottom: 6px;
+    margin-bottom: 0;
   }
 
   .btn-caption-primary {
-    padding: 7px 14px;
+    padding: 7px 15px;
     font-size: 11.5px;
-    border-radius: 18px;
+    font-weight: 700;
+    border-radius: 20px;
     box-shadow: 0 3px 10px rgba(22, 163, 74, 0.35);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .btn-caption-secondary {
-    padding: 6px 12px;
-    font-size: 11.5px;
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.92);
+    display: none !important;
   }
 
+  /* Hide clumsy features triad pills on mobile to keep products and drone completely visible */
   .hero-features-triad {
-    gap: 6px;
-    margin-top: 2px;
-  }
-
-  .hero-feature-pill {
-    padding: 4px 8px;
-    gap: 6px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  .hero-feat-icon-circle {
-    width: 24px;
-    height: 24px;
-    font-size: 10px;
-  }
-
-  .hero-feat-info strong {
-    font-size: 10.5px;
-  }
-
-  .hero-feat-info span {
-    font-size: 8.5px;
+    display: none !important;
   }
 
   /* Reduce gap to About Section on Mobile */

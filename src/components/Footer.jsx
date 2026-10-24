@@ -69,7 +69,11 @@ export const Footer = () => {
               </li>
               <li>
                 <i className="fas fa-phone"></i>
-                <span><a href="tel:+919014255803" style={{color: 'inherit', textDecoration: 'none'}}>+91 90142 55803</a></span>
+                <span><a href="tel:+919014255803" style={{color: 'inherit', textDecoration: 'none'}}>Store: +91 90142 55803</a></span>
+              </li>
+              <li>
+                <i className="fas fa-helicopter"></i>
+                <span><a href="tel:+919010402648" style={{color: 'inherit', textDecoration: 'none'}}>Drone Services: +91 90104 02648</a></span>
               </li>
             </ul>
           </div>
