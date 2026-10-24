@@ -367,7 +367,7 @@ const AboutPage = () => {
           <div className="founder-visual reveal">
             <div className="silhouette-wrapper">
               <div className="silhouette-glow"></div>
-              <img src="/founder.jpg" alt="AgroPest Founder" className="founder-portrait" />
+              <img src="/founder.png" alt="Maddi Shekar - AgroPest Founder" className="founder-portrait" />
               <div className="s-ring r1"></div>
               <div className="s-ring r2"></div>
             </div>
@@ -382,7 +382,7 @@ const AboutPage = () => {
               <Quote size={40} className="q-icon" />
               <div>
                 <p className="q-text">"Better farming today, for a brighter tomorrow."</p>
-                <p className="q-author">- Founder, AgroPest</p>
+                <p className="q-author">- Maddi Shekar, Founder of AgroPest</p>
               </div>
             </div>
           </div>
