@@ -224,16 +224,39 @@ body::before {
 }
 
 
-/* === HERO SECTION (ZERO MARGIN / PADDING ON TOP) === */
+/* === HERO SECTION WITH TOP & BOTTOM FADE EFFECT === */
 .hero-section {
   position: relative;
   width: 100%;
   overflow: hidden;
   margin-top: 0;
   padding-top: 0;
-  min-height: 500px;
-  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
-  mask-image: linear-gradient(to bottom, #000 0%, #000 80%, transparent 100%);
+  min-height: 520px;
+}
+
+/* Smooth top fade and bottom fade overlays */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 45%, transparent 100%);
+  z-index: 3;
+  pointer-events: none;
 }
 
 .hero-bg-full {
@@ -252,8 +275,8 @@ body::before {
   left: 6%;
   transform: translateY(-50%);
   z-index: 10;
-  width: 88%;
-  max-width: 460px;
+  width: 90%;
+  max-width: 480px;
   pointer-events: auto;
 }
 
@@ -275,43 +298,83 @@ body::before {
   animation: glassFadeUp 0.8s ease forwards;
 }
 
-.hero-top-label {
-  display: inline-flex;
+/* Badge group: AgroPest + Bhavani Traders */
+.hero-badge-group {
+  display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 18px;
-  background: linear-gradient(135deg, #16a34a, #15803d);
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.hero-brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #15803d;
   color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
   font-size: 13px;
   font-weight: 800;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+}
+
+.hero-brand-pill i {
+  font-size: 13px;
+}
+
+.hero-store-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(220, 252, 231, 0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(22, 163, 74, 0.35);
+  color: #166534;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  border-radius: 30px;
-  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  margin-bottom: 4px;
+}
+
+.hero-store-pill i {
+  font-size: 12px;
+  color: #16a34a;
 }
 
 .hero-caption-heading {
   font-family: 'Poppins', 'Inter', sans-serif;
   font-size: 38px;
-  font-weight: 800;
-  line-height: 1.18;
-  color: #0f172a;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #064e3b;
   margin: 0;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
+  letter-spacing: -0.5px;
 }
 
 .hero-caption-heading .text-highlight {
-  color: #2E7D32;
+  color: #16a34a;
+}
+
+.hero-heading-leaf {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 1.8rem;
+  vertical-align: middle;
 }
 
 .hero-caption-subtext {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.45;
-  margin: 6px 0 2px;
-  color: #0f172a;
+  margin: 2px 0 6px;
+  color: #1e293b;
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: initial;
@@ -323,48 +386,105 @@ body::before {
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 6px;
+  margin-top: 4px;
+  margin-bottom: 12px;
 }
 
 .btn-caption-primary {
-  background: #2E7D32;
+  background: #16a34a;
   color: #ffffff;
-  padding: 11px 22px;
-  border-radius: 8px;
-  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-size: 13.5px;
   font-weight: 700;
   text-decoration: none;
   border: none;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.25);
+  gap: 7px;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.35);
 }
 
 .btn-caption-primary:hover {
-  background: #1b5e20;
+  background: #15803d;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.35);
+  box-shadow: 0 6px 18px rgba(22, 163, 74, 0.45);
 }
 
 .btn-caption-secondary {
-  background: transparent;
-  color: #2E7D32;
-  padding: 11px 22px;
-  border-radius: 8px;
-  font-size: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #166534;
+  padding: 9px 20px;
+  border-radius: 24px;
+  font-size: 13.5px;
   font-weight: 700;
   text-decoration: none;
-  border: 2px solid #2E7D32;
+  border: 1.5px solid #16a34a;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
+  gap: 6px;
 }
 
 .btn-caption-secondary:hover {
-  background: rgba(46, 125, 50, 0.08);
+  background: #f0fdf4;
   transform: translateY(-2px);
+}
+
+/* Features Triad Row: Pesticides, Fertilizers, Drone Services */
+.hero-features-triad {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.hero-feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(22, 163, 74, 0.22);
+  padding: 8px 14px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero-feat-icon-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(220, 252, 231, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #16a34a;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.hero-feat-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.hero-feat-info strong {
+  font-size: 13px;
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.hero-feat-info span {
+  font-size: 11px;
+  color: #475569;
+  font-weight: 600;
 }
 
 .eco-handwritten-badge {
@@ -2768,19 +2888,32 @@ body::before {
   
   /* Hero Mobile & Tablet Adaptations */
   .hero-section {
+    position: relative;
     min-height: auto;
-    padding-top: 75px;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #ffffff;
-    -webkit-mask-image: none;
-    mask-image: none;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 45%, transparent 100%);
+    z-index: 4;
+  }
+
+  .hero-section::after {
+    height: 80px;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.7) 40%, transparent 100%);
+    z-index: 4;
   }
 
   .hero-picture {
     width: 100%;
     display: block;
+    position: relative;
   }
 
   .hero-bg-full {
@@ -2794,8 +2927,111 @@ body::before {
     display: block;
   }
 
+  /* Overlay text over the mobile hero image exactly like reference image */
   .hero-content-wrapper-left {
-    display: none !important;
+    display: flex !important;
+    position: absolute;
+    top: 82px;
+    left: 4%;
+    transform: none;
+    width: 82%;
+    max-width: 320px;
+    z-index: 5;
+    pointer-events: auto;
+  }
+
+  .hero-caption-card {
+    gap: 6px;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-badge-group {
+    gap: 5px;
+    margin-bottom: 2px;
+  }
+
+  .hero-brand-pill {
+    padding: 4px 10px;
+    font-size: 11px;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(21, 128, 61, 0.25);
+  }
+
+  .hero-brand-pill i {
+    font-size: 10px;
+  }
+
+  .hero-store-pill {
+    padding: 3px 8px;
+    font-size: 9.5px;
+    border-radius: 12px;
+  }
+
+  .hero-caption-heading {
+    font-size: clamp(20px, 6.2vw, 26px);
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95), 0 2px 8px rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-heading-leaf {
+    font-size: 1.25rem;
+  }
+
+  .hero-caption-subtext {
+    font-size: 12px;
+    line-height: 1.35;
+    margin: 2px 0 4px;
+    color: #1e293b;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
+  }
+
+  .hero-caption-buttons {
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+  }
+
+  .btn-caption-primary {
+    padding: 7px 14px;
+    font-size: 11.5px;
+    border-radius: 18px;
+    box-shadow: 0 3px 10px rgba(22, 163, 74, 0.35);
+  }
+
+  .btn-caption-secondary {
+    padding: 6px 12px;
+    font-size: 11.5px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.92);
+  }
+
+  .hero-features-triad {
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  .hero-feature-pill {
+    padding: 4px 8px;
+    gap: 6px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-feat-icon-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .hero-feat-info strong {
+    font-size: 10.5px;
+  }
+
+  .hero-feat-info span {
+    font-size: 8.5px;
   }
 
   /* Reduce gap to About Section on Mobile */
