@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   Users, Leaf, Headset, Sprout, ShieldCheck, Plane, 
   MapPin, ArrowRight, BugOff, Trophy, Shield, 
@@ -105,6 +106,9 @@ const ServicesPage = () => {
                 </div>
                 <h3>Pesticides</h3>
                 <p>Effective crop protection solutions to keep your farm safe from pests and diseases.</p>
+                <Link to="/products?cat=insecticide" style={{ marginTop: '8px', fontSize: '0.85rem', fontWeight: 700, color: '#16a34a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  Explore Pesticides &rarr;
+                </Link>
               </div>
               <div className="timeline-node">
                 <div className="node-icon">
@@ -112,6 +116,9 @@ const ServicesPage = () => {
                 </div>
                 <h3>Fertilizers</h3>
                 <p>Nourish your soil with high-quality fertilizers for stronger and healthier crops.</p>
+                <Link to="/products?cat=organic" style={{ marginTop: '8px', fontSize: '0.85rem', fontWeight: 700, color: '#16a34a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  Explore Fertilizers &rarr;
+                </Link>
               </div>
               <div className="timeline-node">
                 <div className="node-icon">
@@ -119,6 +126,9 @@ const ServicesPage = () => {
                 </div>
                 <h3>Pest Traps</h3>
                 <p>Eco-friendly pest traps to reduce pest population and minimize chemical usage.</p>
+                <Link to="/products?cat=trap" style={{ marginTop: '8px', fontSize: '0.85rem', fontWeight: 700, color: '#16a34a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  Explore Traps &rarr;
+                </Link>
               </div>
               <div className="timeline-node">
                 <div className="node-icon">
@@ -136,6 +146,9 @@ const ServicesPage = () => {
                 </div>
                 <h3>Farm Visit</h3>
                 <p>Expert guidance at your field with personalized solutions for better results.</p>
+                <a href="tel:+919014255803" style={{ marginTop: '8px', fontSize: '0.85rem', fontWeight: 700, color: '#16a34a', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                  <i className="fas fa-phone-alt"></i> Request Visit
+                </a>
               </div>
             </div>
           </div>

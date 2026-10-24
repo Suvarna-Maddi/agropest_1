@@ -170,7 +170,16 @@ const AboutPage = () => {
             <p>
               AgroPest has been a trusted name in agriculture, providing high-quality pesticides, fertilizers, and advanced farming solutions. We are committed to helping farmers improve crop protection, enhance productivity, and adopt modern techniques for a more sustainable and prosperous future.
             </p>
-            <Link to="/services" className="btn-solid mt-4" style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>Our Journey <ArrowRight size={18}/></Link>
+            <button 
+              onClick={() => {
+                const elem = document.querySelector('.our-story');
+                if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+              }} 
+              className="btn-solid mt-4" 
+              style={{ border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+            >
+              Our Journey <ArrowRight size={18}/>
+            </button>
           </div>
           <div className="story-visual reveal delay-1">
             <ChartAnimation />

@@ -38,13 +38,13 @@ const CountUp = ({ end, duration = 2000, suffix = "+" }) => {
 };
 
 const productsData = [
-  { id: 1, name: "Bio-Organic Fertilizer", benefit: "Boosts soil health & microbes", img: "/product1.png" },
-  { id: 2, name: "Premium Pesticide", benefit: "Fast acting pest control", img: "/product2.png" },
-  { id: 3, name: "Advanced Herbicide", benefit: "Targets stubborn weeds", img: "/product3.png" },
-  { id: 4, name: "Crop Protector Shield", benefit: "Weather resistant coating", img: "/product4.png" },
-  { id: 5, name: "Liquid Nitrogen Booster", benefit: "Accelerated vegetative growth", img: "/product5.png" },
-  { id: 6, name: "Eco Fungicide", benefit: "Fungal disease prevention", img: "/product6.png" },
-  { id: 7, name: "Root Stimulator Pro", benefit: "Deep nutrient absorption", img: "/product7.png" }
+  { id: 1, name: "Bio-Organic Fertilizer", category: "organic", benefit: "Boosts soil health & microbes", img: "/product1.png" },
+  { id: 2, name: "Premium Pesticide", category: "insecticide", benefit: "Fast acting pest control", img: "/product2.png" },
+  { id: 3, name: "Advanced Herbicide", category: "herbicide", benefit: "Targets stubborn weeds", img: "/product3.png" },
+  { id: 4, name: "Crop Protector Shield", category: "fungicide", benefit: "Weather resistant coating", img: "/product4.png" },
+  { id: 5, name: "Liquid Nitrogen Booster", category: "organic", benefit: "Accelerated vegetative growth", img: "/product5.png" },
+  { id: 6, name: "Eco Fungicide", category: "fungicide", benefit: "Fungal disease prevention", img: "/product6.png" },
+  { id: 7, name: "Root Stimulator Pro", category: "organic", benefit: "Deep nutrient absorption", img: "/product7.png" }
 ];
 
 export const ProductsSection = () => {
@@ -150,7 +150,12 @@ export const ProductsSection = () => {
       >
         <div className="prod-carousel-track-auto" ref={trackRef}>
           {displayProducts.map((prod, index) => (
-            <div key={`${prod.id}-${index}`} className="prod-card-auto">
+            <Link 
+              key={`${prod.id}-${index}`} 
+              to={`/products?category=${prod.category}`} 
+              className="prod-card-auto"
+              style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column' }}
+            >
               <div className="best-seller-badge-auto">
                 <i className="fas fa-star"></i> Best Seller
               </div>
@@ -161,7 +166,7 @@ export const ProductsSection = () => {
                 <h3>{prod.name}</h3>
                 <p>{prod.benefit}</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
