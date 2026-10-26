@@ -2,15 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const Hero = () => {
-  const scrollToProducts = (e) => {
-    e.preventDefault();
-    const elem = document.getElementById('products');
-    if (elem) {
-      elem.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = '/products';
-    }
-  };
 
   return (
     <section className="hero-section" id="home">

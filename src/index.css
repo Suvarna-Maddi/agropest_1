@@ -3350,4 +3350,27 @@ body::before {
     color: #1e293b;
     font-weight: 600;
   }
+
+  /* Disable in-page button navigations ONLY on mobile view */
+  .hero-caption-buttons .btn-caption-primary,
+  .hero-caption-buttons .btn-caption-secondary,
+  .about-overlay-actions .about-btn-primary,
+  .about-overlay-actions .about-btn-secondary,
+  .srv-card-btn,
+  .srv-explore-btn,
+  .cat-card,
+  .cat-explore-btn,
+  .prod-card-auto,
+  .btn-primary-cta,
+  .os-btn-primary,
+  .os-btn-secondary,
+  .btn-solid,
+  .btn-outline,
+  .btn-explore,
+  .btn-cta-ultra,
+  .timeline-node a,
+  .timeline-node Link {
+    pointer-events: none !important;
+    cursor: default !important;
+  }
 }
