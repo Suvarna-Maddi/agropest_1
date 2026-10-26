@@ -1,13 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleShopNow = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigate('/products');
+  };
+
+  const handleDroneCall = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.href = "tel:+919010402648";
+  };
 
   return (
     <section className="hero-section" id="home">
       {/* Responsive hero image: home_hero.jpg on mobile, l_hero.png on desktop/laptop */}
       <picture className="hero-picture">
-        <source media="(max-width: 768px)" srcSet="/home_hero.jpg" />
+        <source media="(max-width: 768px)" srcSet="/home_hero.jpg?v=3" />
         <img src="/l_hero.png" alt="AgroPest Hero Background" className="hero-bg-full" />
       </picture>
 
@@ -35,11 +48,19 @@ export const Hero = () => {
           </p>
 
           <div className="hero-caption-buttons">
-            <Link to="/products" className="btn-caption-primary">
+            <button 
+              type="button"
+              className="btn-caption-primary"
+              onClick={handleShopNow}
+            >
               <i className="fas fa-shopping-cart"></i> Shop Now <i className="fas fa-chevron-right" style={{ fontSize: '0.75rem' }}></i>
-            </Link>
+            </button>
             
-            <a href="tel:+919010402648" className="btn-caption-secondary">
+            <a 
+              href="tel:+919010402648" 
+              className="btn-caption-secondary"
+              onClick={handleDroneCall}
+            >
               <i className="fas fa-helicopter"></i> Drone Services <i className="fas fa-phone-alt" style={{ fontSize: '0.75rem', marginLeft: '2px' }}></i>
             </a>
           </div>
