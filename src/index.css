@@ -2901,9 +2901,7 @@ body::before {
     transform: translateY(0);
   }
   
-  .nav-menu:not(.show) .nav-dropdown,
-  .nav-menu:not(.show) .nav-dropdown-menu,
-  .nav-menu:not(.show) * {
+  .nav-menu:not(.show) {
     display: none !important;
     pointer-events: none !important;
   }
@@ -2961,6 +2959,7 @@ body::before {
     height: 70px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 45%, transparent 100%);
     z-index: 4;
+    pointer-events: none !important;
   }
 
   .hero-section {
@@ -3362,26 +3361,5 @@ body::before {
     font-weight: 600;
   }
 
-  /* Disable in-page button navigations ONLY on mobile view */
-  .hero-caption-buttons .btn-caption-primary,
-  .hero-caption-buttons .btn-caption-secondary,
-  .about-overlay-actions .about-btn-primary,
-  .about-overlay-actions .about-btn-secondary,
-  .srv-card-btn,
-  .srv-explore-btn,
-  .cat-card,
-  .cat-explore-btn,
-  .prod-card-auto,
-  .btn-primary-cta,
-  .os-btn-primary,
-  .os-btn-secondary,
-  .btn-solid,
-  .btn-outline,
-  .btn-explore,
-  .btn-cta-ultra,
-  .timeline-node a,
-  .timeline-node Link {
-    pointer-events: none !important;
-    cursor: default !important;
-  }
+
 }

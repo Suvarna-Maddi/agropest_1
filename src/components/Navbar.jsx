@@ -5,11 +5,7 @@ export const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
-  const handleCall = (e) => {
-    e.preventDefault();
-    const phone = "+91" + "9014" + "255803";
-    window.location.href = "tel:" + phone;
-  };
+
 
   const isActive = (path) => location.pathname === path;
   const isProductsActive = location.pathname.startsWith('/products');
@@ -41,10 +37,15 @@ export const Navbar = () => {
       </nav>
 
       <div className="nav-right-actions">
-        <a href="tel:+919014255803" onClick={handleCall} className="btn-nav-call">
+        <a href="tel:+919014255803" className="btn-nav-call">
           <i className="fas fa-phone-volume"></i> <span>Contact Us</span>
         </a>
-        <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button 
+          type="button"
+          className="mobile-toggle" 
+          aria-label="Toggle Navigation Menu"
+          onClick={() => setMobileOpen(!mobileOpen)}
+        >
           <i className={`fas ${mobileOpen ? 'fa-times' : 'fa-bars'}`}></i>
         </button>
       </div>

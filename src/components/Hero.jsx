@@ -1,20 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const Hero = () => {
-  const navigate = useNavigate();
-
-  const handleShopNow = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    navigate('/products');
-  };
-
-  const handleDroneCall = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    window.location.href = "tel:+919010402648";
-  };
 
   return (
     <section className="hero-section" id="home">
@@ -48,18 +35,16 @@ export const Hero = () => {
           </p>
 
           <div className="hero-caption-buttons">
-            <button 
-              type="button"
+            <Link 
+              to="/products"
               className="btn-caption-primary"
-              onClick={handleShopNow}
             >
               <i className="fas fa-shopping-cart"></i> Shop Now <i className="fas fa-chevron-right" style={{ fontSize: '0.75rem' }}></i>
-            </button>
+            </Link>
             
             <a 
               href="tel:+919010402648" 
               className="btn-caption-secondary"
-              onClick={handleDroneCall}
             >
               <i className="fas fa-helicopter"></i> Drone Services <i className="fas fa-phone-alt" style={{ fontSize: '0.75rem', marginLeft: '2px' }}></i>
             </a>
