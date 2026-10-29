@@ -53,11 +53,9 @@ const ProductsPage = ({ category }) => {
     const grid = document.getElementById('grid');
 
     const handleGridClick = (e) => {
-      const btn = e.target.closest('.quick');
-      if (!btn) return;
-      e.stopPropagation(); // prevent card outer onClick navigation
-      const card = btn.closest('.card');
+      const card = e.target.closest('.card');
       if (!card || !modal) return;
+      
       const img = card.querySelector('img');
       const title = card.querySelector('h3');
       const desc = card.querySelector('p');
@@ -177,7 +175,7 @@ const ProductsPage = ({ category }) => {
   <div className="grid" id="grid">
     {/* Sample cards (duplicate/change as needed) */}
 
-        <article className="card" data-cat="insecticide" onClick={() => { window.location.href='acemain.html' }}>
+        <article className="card" data-cat="insecticide">
 
       <div className="card-media">
         <img src="acemain.webp" alt="acemain" />
@@ -192,7 +190,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='agadi_g.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="agadi_g.webp" alt="agadi-g"
@@ -208,7 +206,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='agadi_sc.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="agadi_sc.webp" alt="agadi-sc"
@@ -225,7 +223,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='agadisuper.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="agadisuper.webp" alt="agadisuper"
@@ -242,7 +240,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='agas.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="agas.webp" alt="agas"
@@ -259,7 +257,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='allcronsuper.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="allcronsuper.jpg" alt="allcron super"
@@ -276,7 +274,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='amaze.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="amaze.jpg" alt="amaze"
@@ -293,7 +291,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ampligo.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ampligo.webp" alt="ampligo"
@@ -310,7 +308,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='axeman.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="axeman.webp" alt="axeman"
@@ -327,7 +325,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ayuban-505.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ayuban505.jpg" alt="ayuban-505"
@@ -344,7 +342,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ayuban20.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ayuban20.jpg" alt="ayuban-20"
@@ -361,7 +359,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ayuban50.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ayuban50.jpg" alt="ayuban50"
@@ -378,7 +376,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ayuclaim.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ayuclaim.jpeg" alt="ayuclaim"
@@ -395,7 +393,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ayustara.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ayustara.jpg" alt="ayustara"
@@ -412,7 +410,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ayustara75.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ayustara75.jpg" alt="ayustara75"
@@ -429,7 +427,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='barazide.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="barazide.webp" alt="barazide"
@@ -446,7 +444,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='barroz.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="barroz.webp" alt="barroz"
@@ -463,7 +461,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='best4g.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="best4g.png" alt="Best-4G"
@@ -480,7 +478,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='bigboss.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="bigboss.jpg" alt="Bigboss"
@@ -497,7 +495,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='bipimain.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="bipimain.webp" alt="Bipimain"
@@ -514,7 +512,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='boregang.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="boregang.webp" alt="Boregang"
@@ -531,7 +529,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='boregansp.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="boregansp.webp" alt="boregansp"
@@ -548,7 +546,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='carbomain.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="carbomain.webp" alt="carbomain"
@@ -565,7 +563,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='chess.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="chess.jpg" alt="chess"
@@ -582,7 +580,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='citigen.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="citigen.webp" alt="citigen"
@@ -599,7 +597,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='confidantextra.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="confidantextra.jpg" alt="confidant extra"
@@ -616,7 +614,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='confidantsuper.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="confidantsuper.jpg" alt="confidant super"
@@ -633,7 +631,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='cubax.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="cubax.webp" alt="cubax"
@@ -650,7 +648,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='cubaxpower.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="cubaxpower.webp" alt="cubax power"
@@ -667,7 +665,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='cyperpro.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="cyperpro.jpg" alt="cyper pro"
@@ -684,7 +682,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='defender.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="defender.png" alt="defender"
@@ -701,7 +699,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='deltramax11.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="deltramax11.jpg" alt="deltramax-11"
@@ -718,7 +716,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='diron.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="diron.webp" alt="diron"
@@ -735,7 +733,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='enfuse.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="enfuse.webp" alt="enfuse"
@@ -752,7 +750,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='evicent.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="evicent.webp" alt="evicent"
@@ -769,7 +767,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='fasten.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="fasten.png" alt="fasten"
@@ -786,7 +784,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='fida.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="fida.jpg" alt="fida"
@@ -803,7 +801,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ghotu.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ghotu.webp" alt="ghotu"
@@ -820,7 +818,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='harrier.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="harrier.webp" alt="harrier"
@@ -837,7 +835,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='imperial.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="imperial.webp" alt="imperial"
@@ -854,7 +852,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='irma.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="irma.png" alt="irma"
@@ -871,7 +869,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='katera.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="katera.jpg" alt="katera"
@@ -888,7 +886,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='lakra.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="lakra.webp" alt="lakra"
@@ -905,7 +903,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='lamdex.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="lamdex.webp" alt="lamdex"
@@ -922,7 +920,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='lamdexsuper.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="lamdexsuper.webp" alt="lamdex super"
@@ -939,7 +937,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='letham.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="letham.jpg" alt="letham"
@@ -956,7 +954,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='mahabali.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="mahabali.webp" alt="mahabali"
@@ -973,7 +971,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='mainstar.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="mainstar.webp" alt="mainstar"
@@ -990,7 +988,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='mastery.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="mastery.webp" alt="mastery"
@@ -1007,7 +1005,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='merit.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="merit.jpg" alt="merit"
@@ -1024,7 +1022,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='minectoxtra.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="minectoxtra.jpeg" alt="minecto xtra"
@@ -1041,7 +1039,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='monomain.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="monomain.webp" alt="monomain"
@@ -1058,7 +1056,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='natgen.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="natgen.jpg" alt="natgen"
@@ -1075,7 +1073,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='nelsa.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="nelsa.jpeg" alt="nelsa"
@@ -1092,7 +1090,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='nemagen.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="nemagen.png" alt="nemagen"
@@ -1109,7 +1107,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='novoxa.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="novoxa.webp" alt="novoxa"
@@ -1126,7 +1124,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='parviz.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="parviz.webp" alt="parviz"
@@ -1143,7 +1141,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='pedestal.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="pedestal.webp" alt="pedestal"
@@ -1160,7 +1158,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='pedestalsupra.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="pedestalsupra.webp" alt="pedestal supra"
@@ -1177,7 +1175,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='pegasus.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="pegasus.webp" alt="pegasus"
@@ -1194,7 +1192,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='phantom.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="phantom.jpg" alt="phantom"
@@ -1211,7 +1209,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='plesiva.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="plesiva.webp" alt="plesiva"
@@ -1228,7 +1226,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='plethora.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="plethora.webp" alt="plethora"
@@ -1245,7 +1243,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='polozapp.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="polozapp.webp" alt="polozapp"
@@ -1262,7 +1260,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='poros.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="poros.webp" alt="poros"
@@ -1279,7 +1277,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='prado.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="prado.jpg" alt="prado"
@@ -1296,7 +1294,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='prodan.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="prodan.jpg" alt="prodan"
@@ -1313,7 +1311,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='profigan.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="profigan.webp" alt="profigan"
@@ -1330,7 +1328,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='profiganplus.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="profiganplus.webp" alt="profiganplus"
@@ -1347,7 +1345,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='pydon.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="pydon.webp" alt="pydon"
@@ -1364,7 +1362,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-<article className="card" data-cat="insecticide" onClick={() => { window.location.href='pymax.html' }}>
+<article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="pymax.webp" alt="pymax"
@@ -1381,7 +1379,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='regal.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="regal.jpg" alt="regal"
@@ -1398,7 +1396,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='reveal.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="reveal.webp" alt="reveal"
@@ -1415,7 +1413,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='revolt.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="revolt.jpg" alt="revolt"
@@ -1432,7 +1430,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='ronfen.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="ronfen.png" alt="ronfen"
@@ -1449,7 +1447,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sigalit.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="sigalit.webp" alt="sigalit"
@@ -1466,7 +1464,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='simodis.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
         <img src="simodis.jpg" alt="simodis"
@@ -1483,7 +1481,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='spinosher.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="spinosher.png" alt="spinosher"
@@ -1500,7 +1498,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='spintocon.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="spintocon.png" alt="spintocon"
@@ -1517,7 +1515,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='starwar.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="starwar.jpg" alt="starwar"
@@ -1534,7 +1532,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='status.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="status.jpg" alt="status"
@@ -1551,7 +1549,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='suckgan.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="suckgan.webp" alt="suckgan"
@@ -1568,7 +1566,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sy-505.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="sy-505.jpg" alt="sy-505"
@@ -1585,7 +1583,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='syaceta.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="syaceta.jpg" alt="syaceta"
@@ -1602,7 +1600,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sycart.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="sycart.jpg" alt="sycart"
@@ -1619,7 +1617,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='syema.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="syema.jpg" alt="syema"
@@ -1636,7 +1634,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sylambda.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="sylambda.png" alt="sylambda"
@@ -1653,7 +1651,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sylice.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="sylice.jpg" alt="sylice"
@@ -1670,7 +1668,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='symida.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="symida.jpg" alt="symida"
@@ -1687,7 +1685,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='symidatop.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="symidatop.jpg" alt="symida top"
@@ -1704,7 +1702,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-     <article className="card" data-cat="insecticide" onClick={() => { window.location.href='symono.html' }}>
+     <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="symono.jpg" alt="symono"
@@ -1721,7 +1719,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-         <article className="card" data-cat="insecticide" onClick={() => { window.location.href='syproc.html' }}>
+         <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="syproc.jpg" alt="syproc"
@@ -1738,7 +1736,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-      <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sypronil.html' }}>
+      <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="sypronil.jpg" alt="sypronil"
@@ -1755,7 +1753,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sytara.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="sytara.jpg" alt="sytara"
@@ -1772,7 +1770,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='sytara.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="sytara.jpg" alt="sytara"
@@ -1789,7 +1787,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='takaf.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="takaf.webp" alt="takaf"
@@ -1806,7 +1804,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='tapuz.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="tapuz.webp" alt="tapuz"
@@ -1823,7 +1821,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='throne.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="throne.webp" alt="throne"
@@ -1840,7 +1838,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='trassid.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="trassid.webp" alt="trassid"
@@ -1857,7 +1855,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='virtako.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="virtako.jpeg" alt="virtako"
@@ -1874,7 +1872,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-    <article className="card" data-cat="insecticide" onClick={() => { window.location.href='vistara.html' }}>
+    <article className="card" data-cat="insecticide">
   
       <div className="card-media">
   <img src="vistara.png" alt="vistara"
@@ -1916,7 +1914,7 @@ const ProductsPage = ({ category }) => {
 
 
    
-    <article className="card" data-cat="herbicide" onClick={() => { window.location.href='24dagan.html' }}>
+    <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="24dagan.webp" alt="2,4-D Agan"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -1933,7 +1931,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='24dmain.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="24dmain.webp" alt="2,4-D Main"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -1950,7 +1948,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='agil.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="agil.webp" alt="Agil"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -1967,7 +1965,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='atranex.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="atranex.webp" alt="Atranex"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -1984,7 +1982,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='ayufit.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="ayufit.jpg" alt="Ayufit"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2001,7 +1999,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='azaro.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="azaro.png" alt="Azaro"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2018,7 +2016,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='bestie.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="bestie.webp" alt="Bestie"   
    style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2035,7 +2033,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='byju.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="byju.png" alt="Byju"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2052,7 +2050,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='chlormax.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="chlormax.webp" alt="Chlormax"        
    style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2069,7 +2067,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='clodinagan.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="clodinagan.webp" alt="Clodinagan"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2086,7 +2084,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='cutout.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="cutout.jpg" alt="Cutout"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2103,7 +2101,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='eyal.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="eyal.jpg" alt="Eyal"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2120,7 +2118,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='galigan.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="galigan.webp" alt="Galigan"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2137,7 +2135,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='headshot.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="headshot.png" alt="Headshot"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2154,7 +2152,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='majour.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="majour.webp" alt="Majour"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2171,7 +2169,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='paranex.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="paranex.webp" alt="Paranex"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2188,7 +2186,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='pendifast.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="pendifast.png" alt="Pendifast"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2205,7 +2203,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='penfop.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="penfop.png" alt="Penfop"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2222,7 +2220,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='pretigan.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="pretigan.webp" alt="Pretigan"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2239,7 +2237,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='promoxin.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="promoxin.jpg" alt="Promoxin"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2256,7 +2254,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='propifen.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="propifen.png" alt="Propifen"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2273,7 +2271,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='propique.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="propique.png" alt="Propique"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2290,7 +2288,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='qfop10.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="qfop10.webp" alt="Q-Fop 10"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2307,7 +2305,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='right.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="right.jpg" alt="Right"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2324,7 +2322,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='shaked.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="shaked.webp" alt="Shaked"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2341,7 +2339,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='syfit.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="syfit.jpg" alt="Syfit"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2358,7 +2356,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='symoxone.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="symoxone.jpg" alt="Symoxone"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2375,7 +2373,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='tupro.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="tupro.png" alt="Tupro"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2392,7 +2390,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='vypyr.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="vypyr.webp" alt="Vypyr"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2409,7 +2407,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-     <article className="card" data-cat="herbicide" onClick={() => { window.location.href='weedsmash.html' }}>
+     <article className="card" data-cat="herbicide">
       <div className="card-media">
   <img src="weedsmash.png" alt="Weed Smash"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2450,7 +2448,7 @@ const ProductsPage = ({ category }) => {
 
 
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='amistartop.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="amistartop.jpg" alt="Amistar top"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2467,7 +2465,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='ayustodia.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="ayustodia.jpg" alt="Ayustodia"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2484,7 +2482,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='blasil.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="blasil.webp" alt="Blasil"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2500,7 +2498,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='blastogan.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="blastogan.webp" alt="Blastogan"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2517,7 +2515,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='cliff.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="cliff.jpg" alt="Cliff"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2533,7 +2531,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='coltaf.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="coltaf.jpeg" alt="Coltaf"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2550,7 +2548,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='constop.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="constop.jpg" alt="Constop"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2567,7 +2565,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='custodia.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="custodia.webp" alt="Custodia"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2583,7 +2581,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='defender.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="defender.png" alt="Defender"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2599,7 +2597,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='graliz.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="graliz.png" alt="Graliz"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2614,7 +2612,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='isomain.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="isomain.webp" alt="Graliz"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2630,7 +2628,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='kavachflo.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="kavachflo.jpg" alt="Kavachflo"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2646,7 +2644,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='macoban-c.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="macoban-c.webp" alt="Macoban-C"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2662,7 +2660,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='mupa.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="mupa.jpg" alt="Mupa"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2678,7 +2676,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='natcore.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="natcore.jpg" alt="Natcore"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2694,7 +2692,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="fungicide" onClick={() => { window.location.href='natpearl.html' }}>
+      <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="natpearl.jpg" alt="Natpearl"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2710,7 +2708,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-    <article className="card" data-cat="fungicide" onClick={() => { window.location.href='nimrod.html' }}>
+    <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="nimrod.webp" alt="Nimrod"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2726,7 +2724,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='orius.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="orius.webp" alt="Orius"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2743,7 +2741,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='shamir.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="shamir.webp" alt="Shamir"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2760,7 +2758,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='syhexa.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="syhexa.jpg" alt="Syhexa"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2776,7 +2774,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='syodia.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="syodia.jpg" alt="Syodia"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2792,7 +2790,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='syqat.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="syqat.jpg" alt="Syqat"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2808,7 +2806,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='sysafe.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="sysafe.jpg" alt="Sysafe"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2824,7 +2822,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='tebuca.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="tebuca.webp" alt="Tebuca"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2840,7 +2838,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='tricolor.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="tricolor.png" alt="Tricolor"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2856,7 +2854,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='warden.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="warden.png" alt="Warden"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2872,7 +2870,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='wardenextra.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="wardenextra.png" alt="Warden Extra"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2888,7 +2886,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-       <article className="card" data-cat="fungicide" onClick={() => { window.location.href='zamir.html' }}>
+       <article className="card" data-cat="fungicide">
       <div className="card-media">
   <img src="zamir.webp" alt="Zamir"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2917,7 +2915,7 @@ const ProductsPage = ({ category }) => {
 
 
     
- <article className="card" data-cat="organic" onClick={() => { window.location.href='agrogengold.html' }}>
+ <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="agrogengold.webp" alt="Agrogen Gold"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2935,7 +2933,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-    <article className="card" data-cat="organic" onClick={() => { window.location.href='agrogenmaxpro.html' }}>
+    <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="agrogenmaxpro.webp" alt="Agrogenmax Pro"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2954,7 +2952,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-    <article className="card" data-cat="organic" onClick={() => { window.location.href='agrostar.html' }}>
+    <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="agrostar.jpg" alt="Agrostar"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2971,7 +2969,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-    <article className="card" data-cat="organic" onClick={() => { window.location.href='bactolan.html' }}>
+    <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="bactolan.jpg" alt="Bactolan"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -2988,7 +2986,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-    <article className="card" data-cat="organic" onClick={() => { window.location.href='borogen.html' }}>
+    <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="borogen.webp" alt="Borogen"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3006,7 +3004,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-    <article className="card" data-cat="organic" onClick={() => { window.location.href='boron.html' }}>
+    <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="boron.jpg" alt="Boron"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3022,7 +3020,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='cmb.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="cmb.jpg" alt="CMB"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3038,7 +3036,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='copper.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="copper.jpg" alt="Copper"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3054,7 +3052,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='doublestrong.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="doublestrong.webp" alt="Double Strong"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3070,7 +3068,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='exogen.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="exogen.webp" alt="Exogen"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3085,7 +3083,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='ferrous.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="ferrous.jpg" alt="Ferrous"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3100,7 +3098,7 @@ const ProductsPage = ({ category }) => {
         </div>
       </div>
     </article>
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='flora99.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="flora99.webp" alt="Flora-99"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3116,7 +3114,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='gencolmg.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="gencolmg.webp" alt="Gencol-Mg"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3132,7 +3130,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='genpower.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="genpower.webp" alt="Gen Power"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3148,7 +3146,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='gentonik.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="gentonik.webp" alt="Gentonik"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3164,7 +3162,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='gmag.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="gmag.webp" alt="G-Mag"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3180,7 +3178,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='gmyte.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="gmyte.webp" alt="G-Myte"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3196,7 +3194,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='gtmax.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="gtmax.webp" alt="Gt-Max"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3212,7 +3210,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='help.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="help.jpg" alt="Help"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3228,7 +3226,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='npk.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="npk.jpg" alt="NPK"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3244,7 +3242,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='nutrimaxplus.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="nutrimaxplus.webp" alt="Nutrimax Plus"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3260,7 +3258,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='nutripearl.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="nutripearl.jpg" alt="Nutripearl"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3276,7 +3274,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='protector.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="protector.jpg" alt="Protector"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3292,7 +3290,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='sky.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="sky.jpg" alt="Sky"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3308,7 +3306,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='smash.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="smash.jpg" alt="Smash"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3324,7 +3322,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='sprint.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="sprint.jpg" alt="Sprint"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3340,7 +3338,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='talwargold.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="talwargold.webp" alt="Talwar Gold"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3356,7 +3354,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='terror.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="terror.jpg" alt="Terror"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3372,7 +3370,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-      <article className="card" data-cat="organic" onClick={() => { window.location.href='varsha.html' }}>
+      <article className="card" data-cat="organic">
       <div className="card-media">
   <img src="varsha.jpg" alt="Varsha"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3394,7 +3392,7 @@ const ProductsPage = ({ category }) => {
 
 
 
- <article className="card" data-cat="trap" onClick={() => { window.location.href='stickypesttrap.html' }}>
+ <article className="card" data-cat="trap">
       <div className="card-media">
   <img src="yellowsticky.jpg" alt="Yellow Sticky Trap"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
@@ -3411,7 +3409,7 @@ const ProductsPage = ({ category }) => {
       </div>
     </article>
 
-    <article className="card" data-cat="trap" onClick={() => { window.location.href='solarlight.html' }}>
+    <article className="card" data-cat="trap">
       <div className="card-media">
   <img src="solarlight.webp" alt="Solar Light Pesttrap"
            style={{"width":"100%","height":"100%","objectFit":"contain"}} />
