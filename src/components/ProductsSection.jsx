@@ -179,12 +179,12 @@ export const ProductsSection = () => {
 
       <div className="prod-stats-bar">
         <div className="prod-stat">
-          <h4><CountUp end={189} /></h4>
+          <h4><CountUp end={345} /></h4>
           <p>Products</p>
         </div>
         <div className="prod-stat-divider"></div>
         <div className="prod-stat">
-          <h4><CountUp end={49000} /></h4>
+          <h4><CountUp end={12932} /></h4>
           <p>Farmers</p>
         </div>
         <div className="prod-stat-divider"></div>
