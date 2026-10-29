@@ -34,12 +34,15 @@ export const Footer = () => {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/products">Products</Link></li>
-              <li><Link to="/#store" onClick={() => {
-                if (window.location.pathname === '/') {
-                  const elem = document.getElementById('store');
-                  if (elem) elem.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}>Offline Store</Link></li>
+              <li>
+                <a 
+                  href="https://maps.app.goo.gl/ac61RZiPrJ2QepAU9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  Offline Store
+                </a>
+              </li>
             </ul>
           </div>
 
